@@ -76,8 +76,18 @@ button{
     font-size:25px ;
     background-color: #1e1e1e;
 }
+button:hover {
+    background-color: #333;
+}
 
-.Aboutsection{
+a:hover{
+    /* color: yellow; */
+    height: 20px    ;
+    border: 2px solid  rgb(245, 245, 239);
+    /* border-radius: 30px; */
+}
+/*About Section */
+/* .Aboutsection{
     width: 650px;
     height: 800px ;
     padding-top:400px ;
@@ -85,20 +95,38 @@ button{
     margin-top: 20px;
     line-height: 1.8;
 
+} */
+
+.Aboutsection {
+    width: 50%;
+    max-width: 900px;
+    margin: 400px auto 40px auto;
+    padding: 40px 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    line-height: 1.8;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 #Aboutsec
 {
     
     color: rgb(214, 43, 9);
     margin-left: 230px;
-    font-size: 25px;
+    font-size: 55px;
 }
+
+
+#text
+{
+    font-size: 20px;
+}
+
 
 
 html {
   scroll-behavior: smooth;
 }
-/* === Additional styling for About Section === */
+
 
 .Aboutsection p {
     font-size: 18px;
@@ -120,3 +148,6 @@ html {
     margin: 8px auto;
     border-radius: 2px;
 }
+
+
+
