@@ -1,3 +1,4 @@
+
 *{
     margin: 0;
     padding: 0;
@@ -45,7 +46,7 @@ main{
     width: 100%;
     height: 800px;
     /* background-color: aqua; */
-    background-image: url("/https://images.unsplash.com/photo-1587734459056-c0155b92d9a6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDQxfHx8ZW58MHx8fHx8");
+    background-image: url("https://t4.ftcdn.net/jpg/05/30/82/33/360_F_530823384_YGTjwbIQTLAnKpD6fcH22rP0O6saptbk.jpg");
     background-size: cover;
     
 }
@@ -87,7 +88,12 @@ button{
 }
 #Aboutsec
 {
+    
     color: rgb(214, 43, 9);
     margin-left: 230px;
     font-size: 25px;
+}
+
+html {
+  scroll-behavior: smooth;
 }
