@@ -1,0 +1,24 @@
+.Courses{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap; 
+    color: darkmagenta;
+    
+}
+
+.courses-box{
+    border: 2px solid #090909;
+    padding: 15px;
+    width: 300px;
+    border-radius: 10px;
+    background-color: cornsilk;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #090909;
+}
+
+.course-box:hover {
+            transform: scale(1.05); 
+            box-shadow: 0 8px 16px rgba(1, 1, 1, 0.4); 
+        }
