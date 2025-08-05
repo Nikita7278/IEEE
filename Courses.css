@@ -1,13 +1,14 @@
-.Courses{
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap; 
+h2{
+
+    
+    /* gap: 20px; */
+    
+    /* flex-wrap: wrap;  */
     color: darkmagenta;
     
 }
 
-.courses-box{
+.lang{
     border: 2px solid #090909;
     padding: 15px;
     width: 300px;
@@ -18,7 +19,7 @@
     color: #090909;
 }
 
-.course-box:hover {
+.lang:hover {
             transform: scale(1.05); 
             box-shadow: 0 8px 16px rgba(1, 1, 1, 0.4); 
         }
