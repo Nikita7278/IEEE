@@ -1,0 +1,28 @@
+.Courses{
+    color :rgb(231, 16, 185);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+
+}
+
+#courses.card {
+    color :blueviolet;
+
+}
+Button {
+    font-size: 40px;
+    color :rgb(247, 11, 247);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+#info{
+    color: rgb(19, 19, 20)
+}
+
+

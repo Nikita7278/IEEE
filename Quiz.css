@@ -1,0 +1,40 @@
+#Back-to-course {
+    text-align: right;
+    
+    font-size: large;
+    
+}
+main{
+ 
+    
+    /* background-color: aqua; */
+    background-image: url("https://img.freepik.com/premium-photo/quiz-word-written-wood-cubes-with-white-background_384017-7511.jpg");
+    background-size: cover;
+     
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+    
+}
+#start-btn {
+    position: absolute;
+    bottom: 430px;         /* Distance from bottom */
+    left: 50%;            /* Center horizontally */
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    font-size: 20px;
+
+    background-color: #423d3d;      /* Elegant red */
+    color: white;                     /* Text color */
+                 
+   
+    border: none;                     /* Remove default border */
+    border-radius: 25px;              /* Rounded corners */
+    cursor: pointer;                  /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+h1 {
+    text-align: center;
+}
