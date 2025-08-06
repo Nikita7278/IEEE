@@ -1,199 +1,115 @@
-/* Reset and Base */
+/* Reset and base */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  
+  background-color: #f8f9fc;
   color: #222;
- 
 }
 
 /* Navbar */
-.Nav-bar {
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0px 40px;
-  background: linear-gradient(to right, #0ea5e9, #ffffff);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-  /* position: fixed; */
-  width: 100%;
-  /* top: 0;
-  z-index: 1000; */
-  height: 70px;
+  padding: 1rem 2rem;
+  background-color: #4a90e2;
+  color: white;
 }
 
-#Logo {
-  font-size: 35px;
+.logo {
+  font-size: 1.8rem;
   font-weight: bold;
-  color: #01497c;
-  margin:0 550px 0 0px ;
 }
 
-.Nav-bar .features {
-  display: inline-block;
-  margin-left: 20px;
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
 }
 
-.features a {
+.nav-links a {
+  color: white;
   text-decoration: none;
-  font-size: 18px;
-  color: #0c0f11;
-  padding: 6px 12px;
-  transition: color 0.3s ease;
-}
-
-.features a:hover {
-  color: #0284c7;
+  font-weight: 500;
 }
 
 /* Hero Section */
-#Home {
-  /* background: linear-gradient(to right, #fefefe, #e0f7fa); */
-  color: #01497c;
-  padding: 80px 20px;
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  height: 550px;
- 
-}
-.desc{
-    background-image: url("https://as2.ftcdn.net/jpg/01/88/72/13/1000_F_188721321_5NafW68zOX7ujRzo0lfEcwsbeF8anPQi.jpg");
-    background-size: cover;
+  padding: 4rem 2rem;
+  background: linear-gradient(to right, #e3f2fd, #ffffff);
 }
 
-#mainhead h1 {
-  font-size: 60px;
-  color: #0b2545;
-  margin-bottom: 20px;
-   
+.hero-content {
+  max-width: 600px;
+  height: 500px;
 }
 
-#subhead p {
-  font-size: 25px;
-  color: #333;
-  margin-bottom: 25px;
-  margin-top: 30px;
-  height: 100px;
+.hero h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
-#getstartedbutton button {
-  padding: 15px 26px;
-  font-size: 16px;
-  background-color: #0ea5e9;
-  color: #fff;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
+.hero p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: #444;
+}
+
+.language-selection {
+  margin-bottom: 1.5rem;
+}
+
+.language-selection label {
+  font-size: 1rem;
+  margin-right: 0.5rem;
+}
+
+select {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+}
+
+/* Button */
+.start-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #4a90e2;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
   transition: background-color 0.3s ease;
 }
 
-#getstartedbutton button:hover {
-  background-color: #0284c7;
-}
-
-/* Section Headers */
-#Aboutsec,
-#Coursessec,
-#Quizsec,
-#Contactsec {
-  font-size: 30px;
-  font-weight: 700;
-  text-align: center;
-  color: #01497c;
-  margin-bottom: 20px;
-  background: linear-gradient(to right, #0ea5e9, #ffffff);
- 
-}
-
-/* Sections Layout */
-.Aboutsection,
-.Coursessection,
-.Quizsection,
-.Contactsection {
-  background-color: #ffffff;
-  padding: 60px 40px;
-  max-width: 1000px;
-  margin: 25px auto;
-  border-bottom: 1px solid #ddd;
-   padding: 50px 20px;
-    background-color: #f0f8ff; /* Light background */
-    color: #222;    
-}
-
-
-
-
-.Aboutsection p {
-    font-size: 18px;
-    font-family: "Segoe UI", sans-serif;
-    color: #222;
-    background-color: #f4f4f4;
-    padding: 20px;
-    /* border-radius: 8px; */
-    margin-top: 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-
-}
-#text {
-  font-size: 18px;
-  color: #333;
-  line-height: 1.8;
-  text-align: justify;
-
-}
-
-ul {
-  margin-top: 15px;
-  padding-left: 30px;
-}
-
-li {
-  margin-bottom: 10px;
+.start-button:hover {
+  background-color: #3578c5;
 }
 
 /* Footer */
 footer {
-  background-color: #01497c;
-  color: #fff;
   text-align: center;
-  padding: 30px 20px;
-}
-
-footer a {
-  color: #ffddaa;
-  text-decoration: none;
-  margin: 0 10px;
-}
-
-footer a:hover {
-  text-decoration: underline;
+  padding: 1rem;
+  background-color: #4a90e2;
+  color: white;
+  margin-top: 2rem;
 }
 
 /* Responsive */
-/* @media (max-width: 768px) {
-  .Nav-bar {
-    flex-direction: column;
-    align-items: flex-start;
+/* @media (max-width: 600px) {
+  .hero h2 {
+    font-size: 1.5rem;
   }
 
-  .Nav-bar .features {
-    margin: 5px 0;
-  }
-
-  #mainhead h1 {
-    font-size: 32px;
-  }
-
-  #subhead p {
-    font-size: 16px;
-  }
-
-  #getstartedbutton button {
-    font-size: 14px;
-    padding: 10px 20px;
-  }
+  .start-button {
+    padding: 0.6rem 1.2rem;
+  }
 } */
