@@ -105,6 +105,8 @@ body {
   text-align: center;
   color: #01497c;
   margin-bottom: 20px;
+  background: linear-gradient(to right, #0ea5e9, #ffffff);
+ 
 }
 
 /* Sections Layout */
@@ -117,7 +119,37 @@ body {
   max-width: 1000px;
   margin: 25px auto;
   border-bottom: 1px solid #ddd;
+   padding: 50px 20px;
+    background-color: #f0f8ff; /* Light background */
+    color: #222;    
 }
+/* .Coursessection {
+    
+} */
+
+/* .section-heading { */
+    /* font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #1a73e8;
+}
+
+.section-text {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.section-text ul {
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.section-text li {
+    margin-bottom: 8px;
+} */
 
 #text {
   font-size: 18px;
