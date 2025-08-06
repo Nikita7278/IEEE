@@ -123,39 +123,27 @@ body {
     background-color: #f0f8ff; /* Light background */
     color: #222;    
 }
-/* .Coursessection {
-    
-} */
 
-/* .section-heading { */
-    /* font-size: 32px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    text-align: center;
-    color: #1a73e8;
-}
 
-.section-text {
-    max-width: 800px;
-    margin: 0 auto;
+
+
+.Aboutsection p {
     font-size: 18px;
-    line-height: 1.6;
+    font-family: "Segoe UI", sans-serif;
+    color: #222;
+    background-color: #f4f4f4;
+    padding: 20px;
+    /* border-radius: 8px; */
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+
 }
-
-.section-text ul {
-    margin-top: 10px;
-    margin-left: 20px;
-}
-
-.section-text li {
-    margin-bottom: 8px;
-} */
-
 #text {
   font-size: 18px;
   color: #333;
   line-height: 1.8;
   text-align: justify;
+
 }
 
 ul {
@@ -186,7 +174,7 @@ footer a:hover {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .Nav-bar {
     flex-direction: column;
     align-items: flex-start;
@@ -208,4 +196,4 @@ footer a:hover {
     font-size: 14px;
     padding: 10px 20px;
   }
-}
+} */
