@@ -1,120 +1,53 @@
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+body { 
+    margin:0; 
+    font-family: Arial; 
+    background:#eef2f6; 
 }
-
-/* General */
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #f7f8fc;
-  color: #222;
+.navbar { 
+    background:#4a90e2; 
+    color:white; 
+    display:flex; 
+    justify-content:space-between; 
+    padding:1rem 2rem; 
 }
-
-/* Nav Bar */
-.Nav-bar {
-  height: 60px;
-  background-color: #000;
-  color: #fff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 2rem;
+.nav-links { 
+    list-style:none; 
+    display:flex; 
+    gap:1rem; 
 }
-
-.Nav-bar .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
+.nav-links a { 
+    color:white; 
+    text-decoration:none; 
 }
-
-.Nav-bar ul {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
+.dashboard { 
+    padding:2rem; 
+    text-align:center; 
 }
-
-.Nav-bar a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
+.lessons-grid { 
+    display:grid; 
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); 
+    gap:20px; 
 }
-
-.Nav-bar a.active,
-.Nav-bar a:hover {
-  color: #00c8ff;
+.lesson-card { 
+    background:white; 
+    padding:20px;
+    border-radius:10px; 
+    text-decoration:none; 
+    color:#333; 
+    border:2px solid #4a90e2; 
+    transition:0.3s; 
 }
-
-/* Dashboard */
-.dashboard {
-  padding: 2rem;
+.lesson-card:hover { 
+    background:#eaf4ff; 
 }
-
-.dashboard h1 {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
+.disabled { 
+    opacity:0.5; 
+    pointer-events:none; 
 }
-
-.dashboard-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-}
-
-/* Cards */
-.card {
-  background-color: white;
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.card h2 {
-  margin-bottom: 0.5rem;
-  font-size: 1.2rem;
-}
-
-/* Progress Bar */
-.progress-bar {
-  background-color: #eee;
-  height: 10px;
-  border-radius: 5px;
-  margin: 10px 0;
-  overflow: hidden;
-}
-
-.progress {
-  height: 100%;
-  background-color: #00c8ff;
-}
-
-/* Buttons */
-.btn {
-  display: inline-block;
-  margin-top: 10px;
-  background-color: #00c8ff;
-  color: white;
-  padding: 8px 16px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.btn:hover {
-  background-color: #009ecc;
-}
-
-/* Goal status */
-.goal-status {
-  color: green;
-  font-weight: bold;
-}
-
-/* Footer */
-.footer {
-  background-color: #000;
-  color: white;
-  text-align: center;
-  padding: 1rem;
-  margin-top: 3rem;
+footer { 
+    text-align:center; 
+    padding:1rem; 
+    background:#4a90e2; 
+    color:white; 
+    margin-top:20px; 
 }

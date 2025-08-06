@@ -1,0 +1,41 @@
+body { 
+    font-family: Arial; 
+    background:#f4f6fa; 
+    text-align:center; 
+    margin:0; 
+}
+.navbar { 
+    background:#4a90e2; 
+    color:white; 
+    padding:1rem; 
+}
+.lesson-container { 
+    background:white; 
+    padding:20px; 
+    margin:20px auto; 
+    max-width:500px; 
+    border-radius:10px;
+}
+button { 
+    padding:10px 15px; 
+    background:#ff9800; 
+    color:white; 
+    border:none; 
+    border-radius:5px; 
+    margin:5px; 
+}
+.dropzone { 
+    border:2px dashed #4a90e2; 
+    min-width:100px; 
+    min-height:30px; 
+    padding:5px; 
+    display:inline-block; 
+    margin:5px; 
+}
+.draggable { 
+    background:#ddd; 
+    padding:5px; 
+    margin:5px; 
+    display:inline-block; 
+    cursor:grab; 
+}

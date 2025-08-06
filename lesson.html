@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lesson - LinguaQuest</title>
+  <link rel="stylesheet" href="lesson.css">
+</head>
+<body>
+<header class="navbar">
+  <h1 class="logo">LinguaQuest</h1>
+</header>
+
+<section class="lesson-container">
+  <p>XP: <span id="xp">0</span> | Hearts: <span id="hearts">❤️❤️❤️</span></p>
+  <div id="question-box"></div>
+  <p id="feedback"></p>
+  <button id="next" onclick="nextQuestion()" style="display:none;">Next</button>
+</section>
+
+<audio id="ding" src="sounds/ding.mp3"></audio>
+<audio id="buzz" src="sounds/buzz.mp3"></audio>
+
+<script src="/lesson.js"></script>
+</body>
+</html>
