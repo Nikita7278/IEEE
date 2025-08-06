@@ -1,125 +1,129 @@
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Reset and Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.Nav-bar{
-    height: 50px;
-    color: rgb(11, 15, 15);
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    
-    
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+  color: #222;
+ 
 }
 
-header{
-    background-color:rgb(9, 10, 9);
+/* Navbar */
+.Nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 40px;
+  background: linear-gradient(to right, #0ea5e9, #ffffff);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  /* position: fixed; */
+  width: 100%;
+  /* top: 0;
+  z-index: 1000; */
+  height: 70px;
+}
 
+#Logo {
+  font-size: 35px;
+  font-weight: bold;
+  color: #01497c;
+  margin:0 550px 0 0px ;
 }
-#Logo{
-        font-size: 28px;
-        font-weight: bold;
-        padding-right: 850px;
-        padding-left: 0px;
-        margin-left: 0;
-        color:rgb(248, 237, 237);
-        font-family: "Roboto";
-        
+
+.Nav-bar .features {
+  display: inline-block;
+  margin-left: 20px;
 }
-.features{ 
-    font-size: 18px;
-    padding-top: 0px;
+
+.features a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #0c0f11;
+  padding: 6px 12px;
+  transition: color 0.3s ease;
+}
+
+.features a:hover {
+  color: #0284c7;
+}
+
+/* Hero Section */
+#Home {
+  /* background: linear-gradient(to right, #fefefe, #e0f7fa); */
+  color: #01497c;
+  padding: 80px 20px;
+  text-align: center;
+  height: 550px;
+ 
+}
+.desc{
+    background-image: url("https://as2.ftcdn.net/jpg/01/88/72/13/1000_F_188721321_5NafW68zOX7ujRzo0lfEcwsbeF8anPQi.jpg");
+    background-size: cover;
+}
+
+#mainhead h1 {
+  font-size: 60px;
+  color: #0b2545;
+  margin-bottom: 20px;
    
 }
 
-a{
-    text-decoration:none;
-    color:rgb(253, 248, 248);
-    
-
+#subhead p {
+  font-size: 25px;
+  color: #333;
+  margin-bottom: 25px;
+  margin-top: 30px;
+  height: 100px;
 }
 
-main{
-    width: 100%;
-    height: 800px;
-    /* background-color: aqua; */
-    background-image: url("https://t4.ftcdn.net/jpg/05/30/82/33/360_F_530823384_YGTjwbIQTLAnKpD6fcH22rP0O6saptbk.jpg");
-    background-size: cover;
-    
-}
-.desc{
-    color: rgb(10, 10, 10);
-    margin-left: 500px;
-    padding-top: 100px;
-    /* margin-top: 300px; */
+#getstartedbutton button {
+  padding: 15px 26px;
+  font-size: 16px;
+  background-color: #0ea5e9;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-#mainhead{
-    font-size: 40px;
-    color: rgb(10, 10, 10);
-}
-#subhead{
-    font-size: 30px;
-    color: rgb(4, 4, 4);
-}
-button{
-    color: rgb(248, 249, 250);
-    margin-top: 50px;
-    width: 250px;
-    height: 60px;
-    margin-left: 150px;
-    border: 2px solid rgb(0, 0, 0);
-    border-radius: 30px;
-    font-size:25px ;
-    background-color: #1e1e1e;
-}
-button:hover {
-    background-color: #333;
+#getstartedbutton button:hover {
+  background-color: #0284c7;
 }
 
-a:hover{
-    /* color: yellow; */
-    height: 20px    ;
-    border: 2px solid  rgb(245, 245, 239);
-    /* border-radius: 30px; */
-}
-/*About Section */
-/* .Aboutsection{
-    width: 650px;
-    height: 800px ;
-    padding-top:400px ;
-    margin-left: 100px;
-    margin-top: 20px;
-    line-height: 1.8;
-
-} */
-
-.Aboutsection {
-    width: 50%;
-    max-width: 900px;
-    margin: 400px auto 40px auto;
-    padding: 40px 30px;
-    background-color: #fff;
-    border-radius: 10px;
-    line-height: 1.8;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-#Aboutsec
-{
-    
-    color: rgb(214, 43, 9);
-    margin-left: 230px;
-    font-size: 55px;
+/* Section Headers */
+#Aboutsec,
+#Coursessec,
+#Quizsec,
+#Contactsec {
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+  color: #01497c;
+  margin-bottom: 20px;
+  background: linear-gradient(to right, #0ea5e9, #ffffff);
+ 
 }
 
-
-#text
-{
-    font-size: 20px;
+/* Sections Layout */
+.Aboutsection,
+.Coursessection,
+.Quizsection,
+.Contactsection {
+  background-color: #ffffff;
+  padding: 60px 40px;
+  max-width: 1000px;
+  margin: 25px auto;
+  border-bottom: 1px solid #ddd;
+   padding: 50px 20px;
+    background-color: #f0f8ff; /* Light background */
+    color: #222;    
 }
+
 
 
 
@@ -129,18 +133,67 @@ a:hover{
     color: #222;
     background-color: #f4f4f4;
     padding: 20px;
-    border-radius: 8px;
+    /* border-radius: 8px; */
     margin-top: 20px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+
+}
+#text {
+  font-size: 18px;
+  color: #333;
+  line-height: 1.8;
+  text-align: justify;
+
 }
 
-#Aboutsec::after {
-    content: "";
-    display: block;
-    width: 60px;
-    height: 3px;
-    background-color: rgb(214, 43, 9);
-    margin: 8px auto;
-    border-radius: 2px;
+ul {
+  margin-top: 15px;
+  padding-left: 30px;
 }
 
+li {
+  margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+  background-color: #01497c;
+  color: #fff;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+footer a {
+  color: #ffddaa;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+/* @media (max-width: 768px) {
+  .Nav-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .Nav-bar .features {
+    margin: 5px 0;
+  }
+
+  #mainhead h1 {
+    font-size: 32px;
+  }
+
+  #subhead p {
+    font-size: 16px;
+  }
+
+  #getstartedbutton button {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+} */
