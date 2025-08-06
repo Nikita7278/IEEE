@@ -60,10 +60,10 @@ body {
   height: 550px;
  
 }
-.desc{
+ .desc{
     background-image: url("https://as2.ftcdn.net/jpg/01/88/72/13/1000_F_188721321_5NafW68zOX7ujRzo0lfEcwsbeF8anPQi.jpg");
     background-size: cover;
-}
+} 
 
 #mainhead h1 {
   font-size: 60px;
@@ -135,9 +135,10 @@ body {
     padding: 20px;
     /* border-radius: 8px; */
     margin-top: 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  
 
 }
+
 #text {
   font-size: 18px;
   color: #333;
