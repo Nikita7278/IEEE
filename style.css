@@ -44,9 +44,19 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
+<<<<<<< HEAD
   padding: 4rem 2rem;
   background: linear-gradient(to right, #e3f2fd, #ffffff);
 }
+=======
+  height: 550px;
+ 
+}
+ .desc{
+    background-image: url("https://as2.ftcdn.net/jpg/01/88/72/13/1000_F_188721321_5NafW68zOX7ujRzo0lfEcwsbeF8anPQi.jpg");
+    background-size: cover;
+} 
+>>>>>>> 3c3556c1f0e87f6b7b30e4d3c6d6f3e516fd2a82
 
 .hero-content {
   max-width: 600px;
@@ -90,8 +100,74 @@ select {
   transition: background-color 0.3s ease;
 }
 
+<<<<<<< HEAD
 .start-button:hover {
   background-color: #3578c5;
+=======
+#getstartedbutton button:hover {
+  background-color: #0284c7;
+}
+
+/* Section Headers */
+#Aboutsec,
+#Coursessec,
+#Quizsec,
+#Contactsec {
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+  color: #01497c;
+  margin-bottom: 20px;
+  background: linear-gradient(to right, #0ea5e9, #ffffff);
+ 
+}
+
+/* Sections Layout */
+.Aboutsection,
+.Coursessection,
+.Quizsection,
+.Contactsection {
+  background-color: #ffffff;
+  padding: 60px 40px;
+  max-width: 1000px;
+  margin: 25px auto;
+  border-bottom: 1px solid #ddd;
+   padding: 50px 20px;
+    background-color: #f0f8ff; /* Light background */
+    color: #222;    
+}
+
+
+
+
+.Aboutsection p {
+    font-size: 18px;
+    font-family: "Segoe UI", sans-serif;
+    color: #222;
+    background-color: #f4f4f4;
+    padding: 20px;
+    /* border-radius: 8px; */
+    margin-top: 20px;
+  
+
+}
+
+#text {
+  font-size: 18px;
+  color: #333;
+  line-height: 1.8;
+  text-align: justify;
+
+}
+
+ul {
+  margin-top: 15px;
+  padding-left: 30px;
+}
+
+li {
+  margin-bottom: 10px;
+>>>>>>> 3c3556c1f0e87f6b7b30e4d3c6d6f3e516fd2a82
 }
 
 /* Footer */
