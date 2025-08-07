@@ -1,116 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LingaQuest</title>
-    <link rel="stylesheet" href="style.css">
+  <title>LinguaQuest - Home</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="Nav-bar">
-            <div id="Logo">LinguaQuest</div>
-            <div class="features" >
-                <a href="index.html">Home</a>
-            </div>
-            <div class="features">
-                <a href="About.html">About</a>
-            </div>
-            <div class="features" id="Courses">
-                <a href="Courses.html">Courses</a>
-            </div>
-            <div class="features" id="Quiz">
-                <a href="Quiz.html">Quiz</a>
-            </div>
-            <div class="features" id="Contact">
-                <a href="Contact.html">Contact</a>
-            </div>
-        </div>
-    </header>
+<header class="navbar">
+  <h1 class="logo">LinguaQuest</h1>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="dashboard.html">Lessons</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+</header>
 
-    <main>
-        <!-- Home Section -->
-        <div class="desc" id="Home">
-            <div id="mainhead">
-                <h1>Master Languages with Ease</h1>
-            </div>
-            <div id="subhead">
-                <p>Join our courses and take quizzes to boost your skills.</p>
-            </div>
-            <div id="getstartedbutton">
-                <button>Get Started</button>
-            </div>
-        </div>
+<section class="hero">
+  <h2>Learn Languages the Fun Way! 🌍</h2>
+  <p>Interactive lessons, instant feedback, XP rewards & fun challenges.</p>
 
-        <!-- About Section -->
-        <div class="Aboutsection" id="Aboutsection">
-            <div id="Aboutsec">About</div>
-            <div id="text">
-                LinguaQuest is a free, interactive language learning platform designed to make education accessible, engaging, and fun — without the need for logins or subscriptions. Whether you're a complete beginner or looking to sharpen your language skills, LinguaQuest offers an intuitive and gamified experience that fits learners of all ages.
-                <br><br>
-                Our platform combines bite-sized lessons, audio-visual feedback, and interactive exercises such as multiple-choice quizzes, fill-in-the-blanks, and drag-and-drop challenges. By using a game-like XP and hearts system, we keep learners motivated and on track — all while having fun.
-                <br><br>
-                Created with accessibility and simplicity in mind, LinguaQuest works seamlessly across all devices, ensuring you can learn anytime, anywhere. We’re committed to making language education inclusive and effective for everyone — from students and travelers to professionals and lifelong learners.
-                <br><br>
-                With LinguaQuest, you're not just learning words — you're building real-world communication skills in a dynamic, rewarding environment.
-            </div>
-        </div>
+  <!-- Language Selector -->
+  <div class="selector">
+    <label for="language">Choose your language:</label>
+    <select id="language">
+      <option value="">-- Select --</option>
+      <option value="English">English</option>
+      <option value="Spanish">Spanish</option>
+      <option value="German">German</option>
+      <option value="Japanese">Japanese</option>
+      <option value="French">French</option>
+    </select>
+  </div>
 
+  <a href="#" class="btn" onclick="startLearning()">Get Started</a>
+</section>
 
-        <!-- Courses Section -->
-        <div class="Coursessection" id="Coursessection">
-            <div id="Coursessec">Courses</div>
-            <div id="text">
-                Explore our beginner-friendly courses in Spanish, French, Japanese, and more. Each course includes:
-                <ul>
-                    <li>Interactive lessons</li>
-                    <li>Audio & visual content</li>
-                    <li>Vocabulary practice</li>
-                    <li>Grammar basics</li>
-                    <li>Daily challenges</li>
-                </ul>
-                Start at your own pace and track your progress as you level up your skills!
-            </div>
-        </div>
+<footer>
+  <p>© 2025 LinguaQuest. All Rights Reserved.</p>
+</footer>
 
-        <!-- Quiz Section -->
-        <div class="Quizsection" id="Quizsection">
-            <div id="Quizsec">Quiz</div>
-            <div id="text">
-                Test your knowledge with fun and interactive quizzes! Our quizzes are:
-                <ul>
-                    <li>Multiple-choice & fill-in-the-blank based</li>
-                    <li>Topic-wise and level-based</li>
-                    <li>Instant feedback with explanations</li>
-                    <li>XP points for every correct answer</li>
-                </ul>
-                Practice regularly to unlock achievements and master the language faster.
-            </div>
-        </div>
-
-        <!-- Contact Section -->
-        <div class="Contactsection" id="Contactsection">
-            <div id="Contactsec">Contact</div>
-            <div id="text">
-                Have any questions or feedback? We'd love to hear from you!
-                <br><br>
-                📧 Email: support@linguaquest.com <br>
-                📍 Address: 123 Language Lane, EduCity, India <br>
-                📞 Phone: +91 98765 43210
-                <br><br>
-                You can also reach us via our social media pages or drop your message through our contact form.
-            </div>
-        </div>
-    </main>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 LinguaQuest. All rights reserved.</p>
-        <p>Follow us on:
-            <a href="#">Instagram</a>
-            <a href="#">Twitter</a>
-            <a href="#">Facebook</a>
-        </p>
-    </footer>
+<script>
+function startLearning(){
+  let lang = document.getElementById("language").value;
+  if(lang === ""){
+    alert("Please select a language to continue!");
+    return; 
+  }
+  localStorage.setItem("selectedLanguage", lang);
+  window.location.href = "lesson.html";
+}
+</script>
 </body>
 </html>
