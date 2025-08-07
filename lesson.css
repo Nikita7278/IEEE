@@ -110,11 +110,11 @@ body {
   color: #333;
   margin: 0;
   padding: 0;
-  background-image: url("https://static.vecteezy.com/system/resources/previews/007/045/965/non_2x/abstract-white-and-grey-pattern-background-design-abstract-graphic-design-white-and-grey-banner-pattern-background-web-template-abstract-white-wallpaper-abstract-white-background-free-vector.jpg ");
-  background-size: cover ;
+  
 }
 
 header {
+  /* background: linear-gradient(90deg, #6a11cb, #2575fc); */
   background: linear-gradient(90deg, #6a11cb, #2575fc);
   color: white;
   padding: 15px;
@@ -130,6 +130,7 @@ h1, h2 {
 main, section {
   padding: 20px;
 }
+
 
 #dashboard ul {
   list-style: none;
@@ -155,6 +156,11 @@ main, section {
   display: none;
 }
 
+#mode-selection{
+  height: 800px;
+  background-image: url("https://static.vecteezy.com/system/resources/previews/007/045/965/non_2x/abstract-white-and-grey-pattern-background-design-abstract-graphic-design-white-and-grey-banner-pattern-background-web-template-abstract-white-wallpaper-abstract-white-background-free-vector.jpg ");
+  background-size: cover ;
+}
 #mode-selection h2{
   margin-top: 80px;
   text-align: center;
@@ -178,20 +184,30 @@ main, section {
 }
 
 .question {
+  width: 900px;
+  height: 500px;
   background: white;
   padding: 20px;
-  margin: 20px 0;
+  margin: 40px 0 0 300px;
   border-radius: 10px;
   animation: pop 0.5s;
+  background-color: #b6f3f7;
+}
+.question p{
+  font-size: 50px;
+  text-align: center;
+  margin: 50px 0 0 0 ;
 }
 
 button {
-  margin: 8px;
+  text-align: center; 
+  font-size: 30px;  
+  margin: 80px;
   padding: 10px 20px;
   border: none;
   border-radius: 8px;
-  background: #22a6b3;
-  color: white;
+  background: #f8fdfd;
+  color: rgb(8, 5, 5);
   cursor: pointer;
 }
 
