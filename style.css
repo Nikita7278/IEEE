@@ -12,7 +12,7 @@ body {
     color:white; 
     display:flex; 
     justify-content:space-between;
-    padding:0.3rem 2rem; 
+    pading:0.3rem 2rem; 
     /* padding-left: 20px; */
     height: 70px;
 }
@@ -45,7 +45,7 @@ body {
   font-size: 30px;
 }
 .btn { 
-    background:#ff9800; 
+    background:#f5c072; 
     color:white; 
     padding:10px 20px; 
     text-decoration:none; 
