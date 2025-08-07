@@ -9,8 +9,8 @@ function showModeSelection() {
 function startMode(mode) {
   document.getElementById('mode-selection').classList.add('hidden');
   document.getElementById('lesson').classList.remove('hidden');
-  document.getElementById('lesson-title').textContent = `🧠 Lesson Mode: ${modeDescription(mode)}`;
-  document.getElementById(`${mode}-question`).classList.remove('hidden');
+  document.getElementById('lesson-title').textContent = 🧠 Lesson Mode: ${modeDescription(mode)};
+  document.getElementById(${mode}-question).classList.remove('hidden');
 }
 
 function modeDescription(mode) {
@@ -73,15 +73,15 @@ function drop(ev) {
 function updateXP(correct) {
   if (correct) {
     xp += 10;
-    document.getElementById('xp').innerText = `XP: ${xp}`;
+    document.getElementById('xp').innerText = XP: ${xp};
   } else {
     hearts -= 1;
-    document.getElementById('hearts').innerText = "❤️".repeat(hearts);
+    document.getElementById('hearts').innerText = "❤".repeat(hearts);
     if (hearts <= 0) alert("Game Over! Try again.");
   }
 }
 
 function playSound(correct) {
   const sound = correct ? document.getElementById('correct-sound') : document.getElementById('incorrect-sound');
-  sound.play();
+  sound.play();
 }
