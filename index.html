@@ -1,46 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>LinguaQuest | Learn Languages</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>LinguaQuest - Home</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="navbar">
-    <h1 class="logo">LinguaQuest</h1>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="dashboard.html">Dashboard</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Help</a></li>
-      </ul>
-    </nav>
-  </header>
+<header class="navbar">
+  <h1 class="logo">LinguaQuest</h1>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="dashboard.html">Lessons</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <section class="hero">
-    <div class="hero-content">
-      <h2>Embark on your language learning adventure!</h2>
-      <p>Choose a language and get started — no login needed.</p>
+<section class="hero">
+  <h2>Learn Languages the Fun Way! </h2>
+  <p>Interactive lessons, instant feedback, XP rewards & fun challenges.</p>
 
-      <div class="language-selection">
-        <label for="language">Choose your language:</label>
-        <select id="language">
-          <option value="spanish">Spanish</option>
-          <option value="french">French</option>
-          <option value="japanese">Japanese</option>
-        </select>
-      </div>
+  <!-- Language Selector -->
+  <div class="selector">
+    <label for="language">Choose your language:</label>
+    <select id="language">
+      <option value="">-- Select --</option>
+      <option value="English">English</option>
+      <option value="Spanish">Spanish</option>
+      <option value="German">German</option>
+      <option value="Japanese">Japanese</option>
+      <option value="French">French</option>
+    </select>
+  </div>
 
-      <a href="/lesson1.html" class="start-button">Start Learning</a>
+  <a href="#" class="btn" onclick="startLearning()">Get Started</a>
+</section>
 
+<footer>
+  <p>© 2025 LinguaQuest. All Rights Reserved.</p>
+</footer>
 
-    </div>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 LinguaQuest. All rights reserved.</p>
-  </footer>
+<script>
+function startLearning(){
+  let lang = document.getElementById("language").value;
+  if(lang === ""){
+    alert("Please select a language to continue!");
+    return; 
+  }
+  localStorage.setItem("selectedLanguage", lang);
+  window.location.href = "lesson.html";
+}
+</script>
 </body>
 </html>

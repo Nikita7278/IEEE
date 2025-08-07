@@ -1,59 +1,50 @@
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+body { 
+    margin:0; 
+    font-family: Arial; 
+    background:#eef2f6; 
+}
+.navbar { 
+    background:#4a90e2; 
+    color:white; 
+    display:flex; 
+    justify-content:space-between; 
+    padding:1rem 2rem; 
+}
+.nav-links { 
+    list-style:none; 
+    display:flex; 
+    gap:1rem; 
+}
+.nav-links a { 
+    color:white; 
+    text-decoration:none; 
+}
+.dashboard { 
+    padding:2rem; 
+    text-align:center; 
+}
+.lessons-grid { 
+    display:grid; 
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); 
+    gap:20px; 
+}
+.lesson-card { 
+    background:white; 
+    padding:20px;
+    border-radius:10px; 
+    text-decoration:none; 
+    color:#333; 
+    border:2px solid #4a90e2; 
+    transition:0.3s; 
+}
+.lesson-card:hover { 
+    background:#eaf4ff; 
+}
+.disabled { 
+    opacity:0.5; 
+    pointer-events:none; 
 }
 
-/* General */
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #f7f8fc;
-  color: #222;
-}
-
-/* Nav Bar */
-.Nav-bar {
-  height: 60px;
-  background-color: #000;
-  color: #fff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 2rem;
-}
-
-.Nav-bar .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.Nav-bar ul {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-}
-
-.Nav-bar a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.Nav-bar a.active,
-.Nav-bar a:hover {
-  color: #00c8ff;
-}
-
-/* Dashboard */
-.dashboard {
-  padding: 2rem;
-}
-
-.dashboard h1 {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-}
 
 .dashboard-container {
   display: grid;
@@ -118,4 +109,12 @@ body {
   text-align: center;
   padding: 1rem;
   margin-top: 3rem;
+}
+footer { 
+    text-align:center; 
+    padding:1rem; 
+    background:#4a90e2; 
+    color:white; 
+    margin-top:20px; 
+
 }

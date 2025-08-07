@@ -1,30 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LinguaQuest | Dashboard</title>
-  <link rel="stylesheet" href="dashboard.css" />
-  <script defer src="dashboard.js"></script>
-
+  <title>LinguaQuest - Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
-  <!-- Nav Bar -->
-  <header class="Nav-bar">
-    <div class="logo">LinguaQuest</div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="dashboard.html" class="active">Dashboard</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+<header class="navbar">
+  <h1 class="logo">LinguaQuest</h1>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="dashboard.html" class="active">Lessons</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <!-- Dashboard -->
-  <section class="dashboard">
-    <h1 id="greeting">Welcome back!</h1>
+<section class="dashboard">
+  <h2>Your Lessons</h2>
+  <div class="lessons-grid">
+    <a href="lesson.html" class="lesson-card">Lesson 1 - Greetings</a>
+    <a href="#" class="lesson-card disabled">Lesson 2 - Coming Soon</a>
+  </div>
+</section>
+
 
 
     <div class="dashboard-container">
@@ -68,5 +66,10 @@
   <footer class="footer">
     <p>&copy; 2025 LinguaQuest. All rights reserved.</p>
   </footer>
+
+<footer>
+  <p>© 2025 LinguaQuest. All Rights Reserved.</p>
+</footer>
+
 </body>
 </html>
