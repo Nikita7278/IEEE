@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz Results</title>
+  <link rel="stylesheet" href="Quiz.css">
+</head>
+<body>
+  <div class="result">
+    <h2>Quiz Completed!</h2>
+    <p id="score-display"></p>
+    <a href="index.html" class="btn">Try Another Quiz</a>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const score = params.get("score") || 0;
+    const lang = params.get("lang") || "english";
+    const total = 3; // total number of questions
+
+    document.getElementById("score-display").textContent =
+      `You scored ${score} out of ${total} in the ${lang.charAt(0).toUpperCase() + lang.slice(1)} quiz.`;
+  </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Select Language</title>
+  <link rel="stylesheet" href="Quiz.css">
+  <script>
+    function goToQuiz() {
+      const lang = document.querySelector('input[name="language"]:checked');
+      if (lang) {
+        window.location.href = `quiz-${lang.value}.html`;
+      } else {
+        alert("Please select a language.");
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="card">
+    <h2>Choose your Language</h2>
+    <form>
+      <label><input type="radio" name="language" value="english"> English</label><br>
+      <label><input type="radio" name="language" value="german"> German</label><br>
+      <label><input type="radio" name="language" value="japanese"> Japanese</label><br>
+      <button type="button" onclick="goToQuiz()">Submit</button>
+    </form>
+  </div>
+</body>
+</html>

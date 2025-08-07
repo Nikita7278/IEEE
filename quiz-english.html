@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz Questions</title>
+  <link rel="stylesheet" href="Quiz.css">
+</head>
+<body>
+  <div class="quiz">
+    <h2>English Quiz</h2>
+
+    <form id="quiz-form">
+      <p><strong>Question 1:</strong> What is the synonym of "Happy"?</p>
+      <ul>
+        <li><label><input type="radio" name="q1" value="Joyful"> Joyful</label></li>
+        <li><label><input type="radio" name="q1" value="Sad"> Sad</label></li>
+        <li><label><input type="radio" name="q1" value="Angry"> Angry</label></li>
+      </ul>
+
+      <p><strong>Question 2:</strong> What is the antonym of "Fast"?</p>
+      <ul>
+        <li><label><input type="radio" name="q2" value="Quick"> Quick</label></li>
+        <li><label><input type="radio" name="q2" value="Slow"> Slow</label></li>
+        <li><label><input type="radio" name="q2" value="Speed"> Speed</label></li>
+      </ul>
+
+      <p><strong>Question 3:</strong> Which word is a noun?</p>
+      <ul>
+        <li><label><input type="radio" name="q3" value="Run"> Run</label></li>
+        <li><label><input type="radio" name="q3" value="Beautiful"> Beautiful</label></li>
+        <li><label><input type="radio" name="q3" value="City"> City</label></li>
+      </ul>
+
+      <button type="submit" class="btn">Submit</button>
+    </form>
+  </div>
+
+  <script>
+    const correctAnswers = {
+      q1: "Joyful",
+      q2: "Slow",
+      q3: "City"
+    };
+
+    document.getElementById("quiz-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      let score = 0;
+
+      for (let key in correctAnswers) {
+        const selected = document.querySelector(`input[name="${key}"]:checked`);
+        if (selected && selected.value === correctAnswers[key]) {
+          score++;
+        }
+      }
+
+      // Pass score to result page
+      const lang = new URLSearchParams(window.location.search).get('lang') || 'english';
+      window.location.href = `results.html?score=${score}&lang=${lang}`;
+    });
+  </script>
+</body>
+</html>
