@@ -1,24 +1,96 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Lesson - LinguaQuest</title>
-  <link rel="stylesheet" href="lesson.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lesson App</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<header class="navbar">
-  <h1 class="logo">LinguaQuest</h1>
-</header>
+  <header>
+    <h1>📚 Lesson Dashboard</h1>
+    <div id="status">
+      <span id="xp">XP: 0</span>
+      <span id="hearts">❤❤❤</span>
+    </div>
+  </header>
 
-<section class="lesson-container">
-  <p>XP: <span id="xp">0</span> | Hearts: <span id="hearts">❤️❤️❤️</span></p>
-  <div id="question-box"></div>
-  <p id="feedback"></p>
-  <button id="next" onclick="nextQuestion()" style="display:none;">Next</button>
-</section>
+  <main id="dashboard">
+    <h2>Lessons</h2>
+    <ul>
+      <li onclick="startLesson('lesson1')">Lesson 1: Greetings ✅</li>
+      <li onclick="startLesson('lesson2')">Lesson 2: Numbers</li>
+      <li onclick="startLesson('lesson3')">Lesson 3: Adjectives</li>
+      <li onclick="startLesson('lesson4')">Lesson 4: Family Members</li>
+      <li onclick="startLesson('lesson5')">Lesson 5: Introduction of Yourself</li>
+    </ul>
+  </main>
 
-<audio id="ding" src="sounds/ding.mp3"></audio>
-<audio id="buzz" src="sounds/buzz.mp3"></audio>
+  <!-- Lesson 1 -->
+  <section id="lesson1" class="lesson hidden">
+    <h2>🧠 Lesson 1: Greetings</h2>
+    <div class="question">
+      <p>✅ Multiple Choice: What does "Hello" mean?</p>
+      <button onclick="checkAnswer(this, true)">A) Hello</button>
+      <button onclick="checkAnswer(this, false)">B) Goodbye</button>
+    </div>
+    <div class="question">
+      <p>✏ Fill in the blanks: ______ means "Hi".</p>
+      <input type="text" id="fillBlank1"/>
+      <button onclick="checkFillBlank('fillBlank1', 'Hello')">Submit</button>
+    </div>
+    <div class="question">
+      <p>🛠 Drag and Drop: Match "Hello" to its meaning.</p>
+      <div class="drag-container">
+        <div draggable="true" class="drag-item" id="drag-hello">Hello</div>
+        <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)">Drop here</div>
+      </div>
+    </div>
+  </section>
 
-<script src="/lesson.js"></script>
+  <!-- Lesson 2 -->
+  <section id="lesson2" class="lesson hidden">
+    <h2>🔢 Lesson 2: Numbers</h2>
+    <div class="question">
+      <p>✅ What number comes after 2?</p>
+      <button onclick="checkAnswer(this, true)">A) 3</button>
+      <button onclick="checkAnswer(this, false)">B) 5</button>
+    </div>
+  </section>
+
+  <!-- Lesson 3 -->
+  <section id="lesson3" class="lesson hidden">
+    <h2>🎨 Lesson 3: Adjectives</h2>
+    <div class="question">
+      <p>✅ Which one is an adjective?</p>
+      <button onclick="checkAnswer(this, true)">A) Beautiful</button>
+      <button onclick="checkAnswer(this, false)">B) Run</button>
+    </div>
+  </section>
+
+  <!-- Lesson 4 -->
+  <section id="lesson4" class="lesson hidden">
+    <h2>👨‍👩‍👧‍👦 Lesson 4: Family Members</h2>
+    <div class="question">
+      <p>✅ What do you call your mother’s brother?</p>
+      <button onclick="checkAnswer(this, true)">A) Uncle</button>
+      <button onclick="checkAnswer(this, false)">B) Cousin</button>
+    </div>
+  </section>
+
+  <!-- Lesson 5 -->
+  <section id="lesson5" class="lesson hidden">
+    <h2>🙋 Lesson 5: Introduction of Yourself</h2>
+    <div class="question">
+      <p>✏ Fill in the blank: "My name is ______."</p>
+      <input type="text" id="fillBlank5"/>
+      <button onclick="checkFillBlank('fillBlank5', 'yourname')">Submit</button>
+    </div>
+  </section>
+
+  <audio id="correct-sound" src="https://www.soundjay.com/buttons/sounds/button-4.mp3"></audio>
+  <audio id="incorrect-sound" src="https://www.soundjay.com/buttons/sounds/button-10.mp3"></audio>
+
+  <script src="script.js"></script>
 </body>
 </html>
