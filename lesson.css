@@ -85,19 +85,7 @@
   font-size: 1.1rem;
 }
 
-#next-btn {
-  margin-top: 1.5rem;
-  padding: 0.6rem 1.2rem;
-  font-size: 1rem;
-  background-color: #4a90e2;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  /* margin-left: 2000px; */
-  text-align: center;
-  /* display: inline-block; */
-}
+
 
 
 
@@ -187,11 +175,16 @@ main, section {
   background: #fd79a8;
 }
 
+
+#fillBlank1,#fillBlank2,#fillBlank3{
+  font-size: 35px;
+  margin-left: 50px;
+}
 .question {
   width: 900px;
-  height: 900px;
+  height: 600px;
   background: white;
-  padding: 20px;
+  padding: 20px 0 0 100px;
   margin: 40px 0 0 300px;
   border-radius: 10px;
   animation: pop 0.5s;
@@ -202,11 +195,21 @@ main, section {
   text-align: center;
   margin: 50px 0 0 0 ;
 }
+#mcq-question1{
+    margin-left: 700px;
+    margin-right: auto;
 
+}
+#mcq-question2{
+  margin-left: 200px;
+}
+#mcq-question3{
+  margin-left: 500px;
+}
 button {
   text-align: center; 
   font-size: 30px;  
-  margin: 90px 0 0 100px;
+  margin: 90px 0 0 130px;
   padding: 10px 20px;
   border: none;
   border-radius: 8px;
@@ -224,7 +227,19 @@ button:hover {
   align-items: center;
   gap: 15px;
 }
-
+.next-btn {
+  margin:70px 1.2rem 0 2000px;
+  padding: 0.6rem 1.2rem;
+  font-size: 1.5rem;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-left: 3.5rem;
+  text-align: center;
+  /* display: inline-block; */
+}
 .drag-item {
   background: #f0932b;
   padding: 10px;
