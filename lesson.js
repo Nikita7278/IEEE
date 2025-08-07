@@ -2,6 +2,7 @@ let xp = 0;
 let hearts = 3;
 
 function showModeSelection() {
+  alert("Function is running!");
   document.getElementById('dashboard').classList.add('hidden');
   document.getElementById('mode-selection').classList.remove('hidden');
 }
@@ -9,8 +10,8 @@ function showModeSelection() {
 function startMode(mode) {
   document.getElementById('mode-selection').classList.add('hidden');
   document.getElementById('lesson').classList.remove('hidden');
-  document.getElementById('lesson-title').textContent = `🧠 Lesson Mode: ${modeDescription(mode)}`;
-  document.getElementById(`${mode}-question`).classList.remove('hidden');
+  document.getElementById('lesson-title').textContent = 🧠 Lesson Mode: ${modeDescription(mode)};
+  document.getElementById(${mode}-question).classList.remove('hidden');
 }
 
 function modeDescription(mode) {
@@ -50,10 +51,10 @@ function drop(ev) {
 function updateXP(correct) {
   if (correct) {
     xp += 10;
-    document.getElementById('xp').innerText = `XP: ${xp}`;
+    document.getElementById('xp').innerText = XP: ${xp};
   } else {
     hearts -= 1;
-    document.getElementById('hearts').innerText = "❤️".repeat(hearts);
+    document.getElementById('hearts').innerText = "❤".repeat(hearts);
     if (hearts <= 0) alert("Game Over! Try again.");
   }
 }
