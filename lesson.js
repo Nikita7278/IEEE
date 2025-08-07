@@ -28,6 +28,29 @@ function checkAnswer(button, isCorrect) {
   updateXP(isCorrect);
 }
 
+let currentQuestion = 0;
+const mcqQuestions = document.querySelectorAll('[id^="mcq-question"]');
+
+function showNextQuestion() {
+  if (currentQuestion < mcqQuestions.length) {
+    mcqQuestions[currentQuestion].classList.remove('hidden');
+  }
+}
+function checkAnswer(button, isCorrect) {
+  const feedback = isCorrect ? 'correct' : 'incorrect';
+  button.classList.add(feedback);
+  playSound(isCorrect);
+  updateXP(isCorrect);
+
+  // Hide current question and show next
+  mcqQuestions[currentQuestion].classList.add('hidden');
+  currentQuestion++;
+  showNextQuestion();
+}
+
+
+
+
 function checkFillBlank() {
   const answer = document.getElementById('fillBlank').value.trim().toLowerCase();
   const correct = answer === "3" || answer === "three";

@@ -16,9 +16,14 @@
   </header>
 
   <main id="dashboard">
-    <h2>Lessons</h2>
+    
     <ul>
       <li onclick="showModeSelection()">Lesson 1: Greetings ✅</li>
+      <li onclick="showModeSelection()">Lesson 2: Numbers & Counting</li>
+      <li onclick="showModeSelection()">Lesson 3: Days, Months & Time</li>
+      <li onclick="showModeSelection()">Lesson 4: Colors </li>
+      <li onclick="showModeSelection()">Lesson 5: Introducing Yourself</li>
+      
     </ul>
   </main>
 
@@ -39,6 +44,17 @@
       <button onclick="checkAnswer(this, true)">A) Greeting</button>
       <button onclick="checkAnswer(this, false)">B) Number</button>
     </div>
+    <div class="question hidden" id="mcq-question-2">
+  <p>What is the capital of France?</p>
+  <button onclick="checkAnswer(this, true)">A) Paris</button>
+  <button onclick="checkAnswer(this, false)">B) London</button>
+</div>
+
+<div class="question hidden" id="mcq-question-3">
+  <p>Which is the largest planet?</p>
+  <button onclick="checkAnswer(this, false)">A) Earth</button>
+  <button onclick="checkAnswer(this, true)">B) Jupiter</button>
+</div>
 
     <div class="question hidden" id="fill-question">
       <p>Fill in the blank: 1, 2, ___, 4</p>
