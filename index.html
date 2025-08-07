@@ -17,7 +17,7 @@
 </header>
 
 <section class="hero">
-  <h2>Learn Languages the Fun Way! 🌍</h2>
+  <h2>Learn Languages the Fun Way! </h2>
   <p>Interactive lessons, instant feedback, XP rewards & fun challenges.</p>
 
   <!-- Language Selector -->
@@ -45,10 +45,10 @@ function startLearning(){
   let lang = document.getElementById("language").value;
   if(lang === ""){
     alert("Please select a language to continue!");
-    return;
+    return; 
   }
   localStorage.setItem("selectedLanguage", lang);
-  window.location.href = "dashboard.html";
+  window.location.href = "lesson.html";
 }
 </script>
 </body>

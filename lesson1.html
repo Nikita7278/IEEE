@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LinguaQuest | Lesson 1</title>
+  <link rel="stylesheet" href="lesson.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <h1 class="logo">LinguaQuest</h1>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="dashboard.html">Lessons</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Lesson Section -->
+  <main class="lesson-container">
+    <h2>Lesson 1: Basic Greetings</h2>
+    <p><strong>XP:</strong> <span id="xp">0</span> &nbsp;&nbsp; <strong>Hearts:</strong> <span id="hearts">❤️❤️❤️</span></p>
+
+    <div class="question-box" id="question-box">
+      <p id="question">Hola means?</p>
+      <div class="options">
+        <button onclick="checkAnswer(this)" data-correct="true">Hello</button>
+        <button onclick="checkAnswer(this)">Goodbye</button>
+        <button onclick="checkAnswer(this)">Please</button>
+      </div>
+    </div>
+
+    <div id="feedback" class="feedback"></div>
+
+    <button id="next-btn" onclick="loadNextQuestion()" style="display: none;">Next</button>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 LinguaQuest. All rights reserved.</p>
+  </footer>
+
+  <!-- JS -->
+  <script src="lesson1.js"></script>
+</body>
+</html>

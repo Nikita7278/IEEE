@@ -3,44 +3,68 @@ body {
     font-family: Arial;
      background:#f4f6fa; 
 }
+.logo{
+  margin-top: 15px;
+}
 .navbar { 
-    background:#4a90e2; 
+    /* background:#4a90e2;  */
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
     color:white; 
     display:flex; 
     justify-content:space-between;
-    padding:1rem 2rem; 
+    padding:0.3rem 2rem; 
+    /* padding-left: 20px; */
+    height: 70px;
 }
 .nav-links { 
     list-style:none;
     display:flex; 
-    gap:1rem; }
+    gap:1rem;
+    justify-content: space-evenly;
+    font-size: 20px;
+}
+
 .nav-links a {
      color:white; 
      text-decoration:none; 
-    }
+}
+
 .hero { 
+  /* font-size: 500px; */
     text-align:center;
     padding:50px; 
+    height: 450px;
+}
+
+.hero h2{
+  font-size: 70px;
+  margin-top: 20px;
+}
+
+.hero p{
+  font-size: 30px;
 }
 .btn { 
     background:#ff9800; 
     color:white; 
     padding:10px 20px; 
     text-decoration:none; 
-    border-radius:5px;
+    border-radius:7px;
+    font-size: 35px;
 }
 footer { 
     text-align:center; 
     padding:1rem; 
-    background:#4a90e2; 
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
     color:white; 
     margin-top:20px; 
 }
 .selector {
-  margin: 20px 0;
+  margin: 20px 0  40px;
+  font-size: 70px;
 }
 .selector label {
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   margin-right: 10px;
 }
 .selector select {

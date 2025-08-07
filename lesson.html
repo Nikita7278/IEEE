@@ -4,93 +4,76 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Lesson App</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="lesson.css" />
 </head>
 <body>
   <header>
     <h1>📚 Lesson Dashboard</h1>
     <div id="status">
       <span id="xp">XP: 0</span>
-      <span id="hearts">❤❤❤</span>
+      <span id="hearts">❤️❤️❤️</span>
     </div>
   </header>
 
   <main id="dashboard">
-    <h2>Lessons</h2>
+    
     <ul>
-      <li onclick="startLesson('lesson1')">Lesson 1: Greetings ✅</li>
-      <li onclick="startLesson('lesson2')">Lesson 2: Numbers</li>
-      <li onclick="startLesson('lesson3')">Lesson 3: Adjectives</li>
-      <li onclick="startLesson('lesson4')">Lesson 4: Family Members</li>
-      <li onclick="startLesson('lesson5')">Lesson 5: Introduction of Yourself</li>
+      <li onclick="showModeSelection()">Lesson 1: Greetings ✅</li>
+      <li onclick="showModeSelection()">Lesson 2: Numbers & Counting</li>
+      <li onclick="showModeSelection()">Lesson 3: Days, Months & Time</li>
+      <li onclick="showModeSelection()">Lesson 4: Colors </li>
+      <li onclick="showModeSelection()">Lesson 5: Introducing Yourself</li>
+      
     </ul>
   </main>
 
-  <!-- Lesson 1 -->
-  <section id="lesson1" class="lesson hidden">
-    <h2>🧠 Lesson 1: Greetings</h2>
-    <div class="question">
-      <p>✅ Multiple Choice: What does "Hello" mean?</p>
-      <button onclick="checkAnswer(this, true)">A) Hello</button>
-      <button onclick="checkAnswer(this, false)">B) Goodbye</button>
+  <section id="mode-selection" class="hidden">
+    <h2>🎮 Choose Your Game Mode</h2>
+    <div class="mode-buttons">
+      <button onclick="startMode('mcq')">✅ Multiple Choice</button>
+      <button onclick="startMode('fill')">✏️ Fill in the Blanks</button>
+      <button onclick="startMode('drag')">🛠️ Drag and Drop</button>
     </div>
-    <div class="question">
-      <p>✏ Fill in the blanks: ______ means "Hi".</p>
-      <input type="text" id="fillBlank1"/>
-      <button onclick="checkFillBlank('fillBlank1', 'Hello')">Submit</button>
+  </section>
+
+  <section id="lesson" class="hidden">
+    <h2 id="lesson-title"></h2>
+
+    <div class="question hidden" id="mcq-question">
+      <p>What does "Hello" mean?</p>
+      <button onclick="checkAnswer(this, true)">A) Greeting</button>
+      <button onclick="checkAnswer(this, false)">B) Number</button>
     </div>
-    <div class="question">
-      <p>🛠 Drag and Drop: Match "Hello" to its meaning.</p>
+    <div class="question hidden" id="mcq-question-2">
+  <p>What is the capital of France?</p>
+  <button onclick="checkAnswer(this, true)">A) Paris</button>
+  <button onclick="checkAnswer(this, false)">B) London</button>
+</div>
+
+<div class="question hidden" id="mcq-question-3">
+  <p>Which is the largest planet?</p>
+  <button onclick="checkAnswer(this, false)">A) Earth</button>
+  <button onclick="checkAnswer(this, true)">B) Jupiter</button>
+</div>
+
+    <div class="question hidden" id="fill-question">
+      <p>Fill in the blank: 1, 2, ___, 4</p>
+      <input type="text" id="fillBlank"/>
+      <button onclick="checkFillBlank()">Submit</button>
+    </div>
+
+    <div class="question hidden" id="drag-question">
+      <p>Drag the word "Three" to the box:</p>
       <div class="drag-container">
-        <div draggable="true" class="drag-item" id="drag-hello">Hello</div>
-        <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)">Drop here</div>
+        <div draggable="true" class="drag-item" id="dragThree">Three</div>
+        <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)">Drop Here</div>
       </div>
-    </div>
-  </section>
-
-  <!-- Lesson 2 -->
-  <section id="lesson2" class="lesson hidden">
-    <h2>🔢 Lesson 2: Numbers</h2>
-    <div class="question">
-      <p>✅ What number comes after 2?</p>
-      <button onclick="checkAnswer(this, true)">A) 3</button>
-      <button onclick="checkAnswer(this, false)">B) 5</button>
-    </div>
-  </section>
-
-  <!-- Lesson 3 -->
-  <section id="lesson3" class="lesson hidden">
-    <h2>🎨 Lesson 3: Adjectives</h2>
-    <div class="question">
-      <p>✅ Which one is an adjective?</p>
-      <button onclick="checkAnswer(this, true)">A) Beautiful</button>
-      <button onclick="checkAnswer(this, false)">B) Run</button>
-    </div>
-  </section>
-
-  <!-- Lesson 4 -->
-  <section id="lesson4" class="lesson hidden">
-    <h2>👨‍👩‍👧‍👦 Lesson 4: Family Members</h2>
-    <div class="question">
-      <p>✅ What do you call your mother’s brother?</p>
-      <button onclick="checkAnswer(this, true)">A) Uncle</button>
-      <button onclick="checkAnswer(this, false)">B) Cousin</button>
-    </div>
-  </section>
-
-  <!-- Lesson 5 -->
-  <section id="lesson5" class="lesson hidden">
-    <h2>🙋 Lesson 5: Introduction of Yourself</h2>
-    <div class="question">
-      <p>✏ Fill in the blank: "My name is ______."</p>
-      <input type="text" id="fillBlank5"/>
-      <button onclick="checkFillBlank('fillBlank5', 'yourname')">Submit</button>
     </div>
   </section>
 
   <audio id="correct-sound" src="https://www.soundjay.com/buttons/sounds/button-4.mp3"></audio>
   <audio id="incorrect-sound" src="https://www.soundjay.com/buttons/sounds/button-10.mp3"></audio>
 
-  <script src="script.js"></script>
+  <script src="lesson.js"></script>
 </body>
 </html>
