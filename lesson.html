@@ -43,19 +43,21 @@
       <p>What does "Hello" mean?</p>
       <button onclick="checkAnswer(this, true)">A) Hallo</button>
       <button onclick="checkAnswer(this, false)">B) Tschuss</button>
+      
       <button onclick="checkAnswer(this, false)">C) Danke</button>
-      <button onclick="checkAnswer(this, false)">D) Bitte</button>
+      <button onclick="checkAnswer(this, false)">D) Bitte</button><br>
       <button class="next-btn hidden" onclick="goToNext()">Next</button>
     </div>
-
+      
     <div class="question hidden" id="mcq-question-2">
       <p>What does "Guten Morgen" mean?</p>
       <button onclick="checkAnswer(this, true)">A) Good Morning</button>
-      <button onclick="checkAnswer(this, false)">B) Good Evening</button>
+      <button onclick="checkAnswer(this, false)">B) Good Evening</button><br>
       <button onclick="checkAnswer(this, false)">C) Goodbye</button>
       <button onclick="checkAnswer(this, false)">D) Thank You</button>
       <button class="next-btn hidden" onclick="goToNext()">Next</button>
     </div>
+   
 
     <div class="question hidden" id="mcq-question-3">
       <p>How do you say “How are you?"?</p>
@@ -65,11 +67,29 @@
       <button onclick="checkAnswer(this, false)">D) Hallo</button>
       <button class="next-btn hidden" onclick="goToNext()">Next</button>
     </div>
+      
+    <div class="question hidden" id="fill-question1">
+      <h3>Fill in the blanks</h3>
+      <p>Guten ______!</p>
+      <input type="text" id="fillBlank1" placeholder="Your answer">
+      <button onclick="checkFillBlank('fillBlank1', ['morgen'])">Check answer</button>
+      <button class="next-btn hidden" onclick="goToNext()">Next</button>
+    </div>
 
-    <div class="question hidden" id="fill-question">
-      <p>Fill in the blank: 1, 2, ___, 4</p>
-      <input type="text" id="fillBlank"/>
-      <button onclick="checkFillBlank()">Submit</button>
+    <div class="question hidden" id="fill-question2">
+      <h3>Fill in the blanks</h3>
+      <p> Wie ______ du?</p>
+      <input type="text" id="fillBlank2" placeholder="Your answer"/>
+      <button onclick="checkFillBlank('fillBlank2', ['geht'])">Check answer</button>
+      <button class="next-btn hidden" onclick="goToNext()">Next</button>
+    </div>
+
+    <div class="question hidden" id="fill-question3">
+      <h3>Fill in the blanks</h3>
+      <p>Hallo, mein ______ ist Anna.</p>
+      <input type="text" id="fillBlank3" placeholder="Your answer"/>
+      <button onclick="checkFillBlank('fillBlank3', ['name'])">Check answer</button>
+      <button class="next-btn hidden" onclick="goToNext()">Next</button>
     </div>
 
     <div class="question hidden" id="drag-question">
@@ -81,8 +101,12 @@
     </div>
   </section>
 
-  <audio id="correct-sound" src="https://www.soundjay.com/buttons/sounds/button-4.mp3"></audio>
-  <audio id="incorrect-sound" src="https://www.soundjay.com/buttons/sounds/button-10.mp3"></audio>
+  <audio id="correct-sound" src="https://www.soundjay.com/human/sounds/applause-8.mp3"></audio>
+  <!-- <audio id="incorrect-sound" src="https://cdn.pixabay.com/download/audio/2021/11/25/audio_9c6748f4e4.mp3?filename=oops-45698.mp3"></audio> -->
+  <!-- <audio id="next-sound" src="https://www.soundjay.com/button/beep-07.wav"></audio> -->
+
+  <!-- <audio id="incorrect-sound" preload="auto" src="https://cdn.pixabay.com/download/audio/2021/11/25/audio_9c6748f4e4.mp3?filename=oops-45698.mp3"></audio> -->
+<audio id="incorrect-sound" preload="auto" src="YOUR_NEW_OOPS_CLIP_URL_HERE"></audio>
 
   <script src="lesson.js"></script>
 </body>

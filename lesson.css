@@ -94,7 +94,12 @@
   border: none;
   border-radius: 6px;
   cursor: pointer;
+  /* margin-left: 2000px; */
+  text-align: center;
+  /* display: inline-block; */
 }
+
+
 
 footer {
   text-align: center;
@@ -184,7 +189,7 @@ main, section {
 
 .question {
   width: 900px;
-  height: 500px;
+  height: 900px;
   background: white;
   padding: 20px;
   margin: 40px 0 0 300px;
@@ -201,7 +206,7 @@ main, section {
 button {
   text-align: center; 
   font-size: 30px;  
-  margin: 80px;
+  margin: 90px 0 0 100px;
   padding: 10px 20px;
   border: none;
   border-radius: 8px;

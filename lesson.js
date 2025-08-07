@@ -1,16 +1,35 @@
 let xp = 0;
 let hearts = 3;
 
+let currentQuestion = 0;
+let currentMode = '';
+let fillQuestions = [];
+let dragQuestions = [];
+let mcqQuestions = [];
+
 function showModeSelection() {
   document.getElementById('dashboard').classList.add('hidden');
   document.getElementById('mode-selection').classList.remove('hidden');
 }
 
 function startMode(mode) {
+  currentMode = mode;
   document.getElementById('mode-selection').classList.add('hidden');
   document.getElementById('lesson').classList.remove('hidden');
   document.getElementById('lesson-title').textContent = `🧠 Lesson Mode: ${modeDescription(mode)}`;
-  document.getElementById(`${mode}-question`).classList.remove('hidden');
+
+  currentQuestion = 0;
+
+  if (mode === 'mcq') {
+    mcqQuestions = Array.from(document.querySelectorAll('[id^="mcq-question"]'));
+    showQuestion(mcqQuestions, currentQuestion);
+  } else if (mode === 'fill') {
+    fillQuestions = Array.from(document.querySelectorAll('[id^="fill-question"]'));
+    showQuestion(fillQuestions, currentQuestion);
+  } else if (mode === 'drag') {
+    dragQuestions = Array.from(document.querySelectorAll('[id^="drag-question"]'));
+    showQuestion(dragQuestions, currentQuestion);
+  }
 }
 
 function modeDescription(mode) {
@@ -18,16 +37,37 @@ function modeDescription(mode) {
     case 'mcq': return 'Multiple Choice';
     case 'fill': return 'Fill in the Blanks';
     case 'drag': return 'Drag and Drop';
+    default: return '';
   }
 }
 
-let currentQuestion = 0;
-const mcqQuestions = document.querySelectorAll('[id^="mcq-question"]');
-
-function showNextQuestion() {
-  if (currentQuestion < mcqQuestions.length) {
-    mcqQuestions[currentQuestion].classList.remove('hidden');
+function showQuestion(questionSet, index) {
+  questionSet.forEach(q => q.classList.add('hidden'));
+  if (questionSet[index]) {
+    questionSet[index].classList.remove('hidden');
   }
+}
+
+function goToNext() {
+  let questionSet;
+  if (currentMode === 'mcq') questionSet = mcqQuestions;
+  else if (currentMode === 'fill') questionSet = fillQuestions;
+  else if (currentMode === 'drag') questionSet = dragQuestions;
+
+  if (!questionSet) return;
+
+  // Hide current
+  if (questionSet[currentQuestion]) {
+    questionSet[currentQuestion].classList.add('hidden');
+  }
+
+  // Optional: play next sound
+  const nextSound = document.getElementById('next-sound');
+  if (nextSound) nextSound.play();
+
+  // Show next
+  currentQuestion++;
+  showQuestion(questionSet, currentQuestion);
 }
 
 function checkAnswer(button, isCorrect) {
@@ -36,31 +76,26 @@ function checkAnswer(button, isCorrect) {
   playSound(isCorrect);
   updateXP(isCorrect);
 
-  // Show the "Next" button
   const parent = button.parentElement;
   const nextButton = parent.querySelector('.next-btn');
   if (nextButton) nextButton.classList.remove('hidden');
 }
 
-function goToNext() {
-  // Hide current question
-  mcqQuestions[currentQuestion].classList.add('hidden');
-  
-  // Play next-question sound (optional)
-  const nextSound = document.getElementById('next-sound');
-  if (nextSound) nextSound.play();
+function checkFillBlank(inputId, correctAnswers) {
+  const inputField = document.getElementById(inputId);
+  const answer = inputField.value.trim().toLowerCase();
 
-  // Show next question
-  currentQuestion++;
-  showNextQuestion();
-}
+  if (answer === '') return;
 
+  const isCorrect = correctAnswers.includes(answer);
+  playSound(isCorrect);
+  updateXP(isCorrect);
 
-function checkFillBlank() {
-  const answer = document.getElementById('fillBlank').value.trim().toLowerCase();
-  const correct = answer === "3" || answer === "three";
-  playSound(correct);
-  updateXP(correct);
+  inputField.classList.remove("correct", "incorrect");
+  inputField.classList.add(isCorrect ? "correct" : "incorrect");
+
+  const nextButton = inputField.parentElement.querySelector('.next-btn');
+  if (nextButton) nextButton.classList.remove('hidden');
 }
 
 function allowDrop(ev) {
@@ -73,6 +108,9 @@ function drop(ev) {
   ev.target.appendChild(data);
   playSound(true);
   updateXP(true);
+
+  const nextButton = ev.target.closest('.question').querySelector('.next-btn');
+  if (nextButton) nextButton.classList.remove('hidden');
 }
 
 function updateXP(correct) {
@@ -87,6 +125,12 @@ function updateXP(correct) {
 }
 
 function playSound(correct) {
-  const sound = correct ? document.getElementById('correct-sound') : document.getElementById('incorrect-sound');
-  sound.play();
+  const sound = correct
+    ? document.getElementById('correct-sound')
+    : document.getElementById('incorrect-sound');
+
+  if (sound) {
+    sound.currentTime = 0;
+    sound.play().catch(e => console.warn("Audio play failed:", e));
+  }
 }
