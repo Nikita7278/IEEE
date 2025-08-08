@@ -3,6 +3,7 @@ let hearts = 3;
 
 let currentQuestion = 0;
 let currentMode = '';
+<<<<<<< HEAD
 let currentQuestions = [];
 
 let selectedLanguage = localStorage.getItem('selectedLanguage');
@@ -64,6 +65,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+=======
+let fillQuestions = [];
+let dragQuestions = [];
+let mcqQuestions = [];
+>>>>>>> 9398160b41b2ac1540d2c5d157dcfdc98269c7c7
 
 function showModeSelection() {
   document.getElementById('dashboard').classList.add('hidden');
@@ -77,6 +83,7 @@ function startMode(mode) {
   document.getElementById('lesson-title').textContent = `🧠 Lesson Mode: ${modeDescription(mode)}`;
 
   currentQuestion = 0;
+<<<<<<< HEAD
   currentQuestions = [];
 
   // Clear old questions from the lesson container
@@ -135,6 +142,19 @@ function startMode(mode) {
   }
 
   showQuestion(currentQuestions, currentQuestion);
+=======
+
+  if (mode === 'mcq') {
+    mcqQuestions = Array.from(document.querySelectorAll('[id^="mcq-question"]'));
+    showQuestion(mcqQuestions, currentQuestion);
+  } else if (mode === 'fill') {
+    fillQuestions = Array.from(document.querySelectorAll('[id^="fill-question"]'));
+    showQuestion(fillQuestions, currentQuestion);
+  } else if (mode === 'drag') {
+    dragQuestions = Array.from(document.querySelectorAll('[id^="drag-question"]'));
+    showQuestion(dragQuestions, currentQuestion);
+  }
+>>>>>>> 9398160b41b2ac1540d2c5d157dcfdc98269c7c7
 }
 
 function modeDescription(mode) {
@@ -154,6 +174,7 @@ function showQuestion(questionSet, index) {
 }
 
 function goToNext() {
+<<<<<<< HEAD
   if (!currentQuestions) return;
 
   // Hide current
@@ -162,11 +183,27 @@ function goToNext() {
   }
 
   // Play next sound if available
+=======
+  let questionSet;
+  if (currentMode === 'mcq') questionSet = mcqQuestions;
+  else if (currentMode === 'fill') questionSet = fillQuestions;
+  else if (currentMode === 'drag') questionSet = dragQuestions;
+
+  if (!questionSet) return;
+
+  // Hide current
+  if (questionSet[currentQuestion]) {
+    questionSet[currentQuestion].classList.add('hidden');
+  }
+
+  // Optional: play next sound
+>>>>>>> 9398160b41b2ac1540d2c5d157dcfdc98269c7c7
   const nextSound = document.getElementById('next-sound');
   if (nextSound) nextSound.play();
 
   // Show next
   currentQuestion++;
+<<<<<<< HEAD
   if (currentQuestion < currentQuestions.length) {
     showQuestion(currentQuestions, currentQuestion);
   } else {
@@ -178,6 +215,14 @@ function goToNext() {
 
 function checkAnswer(button, isCorrect) {
   button.classList.add(isCorrect ? 'correct' : 'incorrect');
+=======
+  showQuestion(questionSet, currentQuestion);
+}
+
+function checkAnswer(button, isCorrect) {
+  const feedback = isCorrect ? 'correct' : 'incorrect';
+  button.classList.add(feedback);
+>>>>>>> 9398160b41b2ac1540d2c5d157dcfdc98269c7c7
   playSound(isCorrect);
   updateXP(isCorrect);
 
@@ -189,8 +234,14 @@ function checkAnswer(button, isCorrect) {
 function checkFillBlank(inputId, correctAnswers) {
   const inputField = document.getElementById(inputId);
   const answer = inputField.value.trim().toLowerCase();
+<<<<<<< HEAD
   if (answer === '') return;
 
+=======
+
+  if (answer === '') return;
+
+>>>>>>> 9398160b41b2ac1540d2c5d157dcfdc98269c7c7
   const isCorrect = correctAnswers.includes(answer);
   playSound(isCorrect);
   updateXP(isCorrect);
@@ -238,4 +289,18 @@ function playSound(correct) {
     sound.currentTime = 0;
     sound.play().catch(e => console.warn("Audio play failed:", e));
   }
+}
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    var draggedElement = document.getElementById(data);
+    ev.target.textContent = draggedElement.textContent;
 }
