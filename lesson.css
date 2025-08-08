@@ -202,7 +202,7 @@ main, section {
 button {
   text-align: center; 
   font-size: 30px;  
-  margin: 80px;
+  margin: 70px  0 0 160px;
   padding: 10px 20px;
   border: none;
   border-radius: 8px;
