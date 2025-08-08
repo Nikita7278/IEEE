@@ -18,7 +18,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: #4a90e2;
+  background-color: #320733;
   color: white;
 }
 
@@ -92,10 +92,11 @@
 footer {
   text-align: center;
   padding: 1rem;
-  background-color: #4a90e2;
+  background-color: #320733;
   color: white;
   margin-top: 3rem;
 }
+
 body {
   font-family: Arial, sans-serif;
   background: #f5f6fa;
@@ -106,8 +107,7 @@ body {
 }
 
 header {
-  /* background: linear-gradient(90deg, #6a11cb, #2575fc); */
-  background: linear-gradient(90deg, #6a11cb, #2575fc);
+background-color: #320733;
   color: white;
   padding: 15px;
   display: flex;
@@ -141,7 +141,7 @@ main, section {
 
 #dashboard li:hover {
   transform: scale(1.02);
-  background-color: #dff9fb;
+  background-color: #db98dc;
 }
 
 .hidden {
@@ -150,8 +150,9 @@ main, section {
 
 #mode-selection{
   height: 800px;
-  background-image: url("https://static.vecteezy.com/system/resources/previews/007/045/965/non_2x/abstract-white-and-grey-pattern-background-design-abstract-graphic-design-white-and-grey-banner-pattern-background-web-template-abstract-white-wallpaper-abstract-white-background-free-vector.jpg ");
-  background-size: cover ;
+  /* background-image: url("https://static.vecteezy.com/system/resources/previews/007/045/965/non_2x/abstract-white-and-grey-pattern-background-design-abstract-graphic-design-white-and-grey-banner-pattern-background-web-template-abstract-white-wallpaper-abstract-white-background-free-vector.jpg ");
+  background-size: cover ; */
+  background-color: #C7A2CD ;
 }
 #mode-selection h2{
   margin-top: 80px;
@@ -164,7 +165,7 @@ main, section {
   padding: 55px 25px;
   border: none;
   border-radius: 10px;
-  background: #e84393;
+  background: #f558a4;
   color: white;
   font-size: 30px;
   cursor: pointer;
@@ -175,28 +176,6 @@ main, section {
   background: #fd79a8;
 }
 
-
-#fillBlank1,#fillBlank2,#fillBlank3{
-  font-size: 35px;
-  margin-left: 50px;
-  margin-left: 150px;
-  margin-top: 70px;
-}
-.question {
-  width: 900px;
-  height: 600px;
-  background: white;
-  padding: 20px 0 0 100px;
-  margin: 40px 0 0 300px;
-  border-radius: 10px;
-  animation: pop 0.5s;
-  background-color: #b6f3f7;
-}
-.question p{
-  font-size: 50px;
-  text-align: center;
-  margin: 50px 0 0 0 ;
-}
 #mcq-question1{
   margin: 50px 90px 0 0px ;
 }
@@ -227,7 +206,7 @@ button {
 }
 
 button:hover {
-  background: #1e90ff;
+  background: #7d017f;
 }
 
 /* .drag-container {
@@ -249,6 +228,28 @@ button:hover {
   /* display: inline-block; */
 }
 
+
+#fillBlank1,#fillBlank2,#fillBlank3{
+  font-size: 35px;
+  margin-left: 50px;
+  margin-left: 150px;
+  margin-top: 70px;
+}
+.question {
+  width: 900px;
+  height: 800px;
+  background: white;
+  padding: 20px 0 0 100px;
+  margin: 40px 0 0 300px;
+  border-radius: 10px;
+  animation: pop 0.5s;
+  background-color: #C7A2CD ;
+}
+.question p{
+  font-size: 50px;
+  text-align: center;
+  margin: 50px 0 0 0 ;
+}
 .next-btn {
   margin:70px 1.2rem 0 2000px;
   padding: 0.6rem 1.2rem;
@@ -291,7 +292,12 @@ button:hover {
   background: #eb4d4b !important;
 }
 
+/* @keyframes pop {
+  0% { transform: scale(0.9); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+>>>>>>> 023f4cd8c7c09320de5090289d820a5c34f4763a
 
+} */
 
 
 

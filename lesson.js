@@ -4,7 +4,6 @@ let hearts = 3;
 let currentQuestion = 0;
 let currentMode = '';
 let currentQuestions = [];
-
 let selectedLanguage = localStorage.getItem('selectedLanguage');
 
 
@@ -82,64 +81,23 @@ function startMode(mode) {
   document.getElementById('lesson-title').textContent = `🧠 Lesson Mode: ${modeDescription(mode)}`;
 
   currentQuestion = 0;
-  currentQuestions = [];
 
-  // Clear old questions from the lesson container
-  const lessonContainer = document.getElementById('lesson');
-  lessonContainer.querySelectorAll('.question').forEach(q => q.remove());
-
-  const data = questionsData[selectedLanguage][mode];
-
+  // Only select existing HTML questions
   if (mode === 'mcq') {
-    currentQuestions = data.map((item, i) => {
-      const container = document.createElement('div');
-      container.className = 'question hidden';
-      container.innerHTML = `
-        <p>${item.q}</p>
-        ${item.options.map((opt, idx) => `
-          <button onclick="checkAnswer(this, ${idx === item.correct})">${String.fromCharCode(65 + idx)}) ${opt}</button>
-        `).join('')}
-        <br>
-        <button class="next-btn hidden" onclick="goToNext()">Next</button>
-      `;
-      lessonContainer.appendChild(container);
-      return container;
-    });
-  } 
-  else if (mode === 'fill') {
-    currentQuestions = data.map((item, i) => {
-      const container = document.createElement('div');
-      container.className = 'question hidden';
-      const inputId = `fill-${i}`;
-      container.innerHTML = `
-        <h3>Fill in the blanks</h3>
-        <p>${item.q}</p>
-        <input type="text" id="${inputId}" placeholder="Your answer">
-        <button onclick="checkFillBlank('${inputId}', ${JSON.stringify(item.answer)})">Check answer</button>
-        <button class="next-btn hidden" onclick="goToNext()">Next</button>
-      `;
-      lessonContainer.appendChild(container);
-      return container;
-    });
-  } 
-  else if (mode === 'drag') {
-    currentQuestions = data.map((item, i) => {
-      const container = document.createElement('div');
-      container.className = 'question hidden';
-      container.innerHTML = `
-        <p>${item.instruction}</p>
-        <div class="drag-container">
-          <div draggable="true" class="drag-item" id="dragItem-${i}">${item.word}</div>
-          <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)">Drop Here</div>
-        </div>
-        <button class="next-btn hidden" onclick="goToNext()">Next</button>
-      `;
-      lessonContainer.appendChild(container);
-      return container;
-    });
+    mcqQuestions = Array.from(document.querySelectorAll('[id^="mcq-question"]'));
+    currentQuestions = mcqQuestions;
+  } else if (mode === 'fill') {
+    fillQuestions = Array.from(document.querySelectorAll('[id^="fill-question"]'));
+    currentQuestions = fillQuestions;
+  } else if (mode === 'drag') {
+    dragQuestions = Array.from(document.querySelectorAll('[id^="drag-question"]'));
+    currentQuestions = dragQuestions;
   }
 
+  // Show first question
   showQuestion(currentQuestions, currentQuestion);
+}
+
 
 
   if (mode === 'mcq') {
@@ -152,7 +110,8 @@ function startMode(mode) {
     dragQuestions = Array.from(document.querySelectorAll('[id^="drag-question"]'));
     showQuestion(dragQuestions, currentQuestion);
   }
-}
+
+
 
 function modeDescription(mode) {
   switch (mode) {
@@ -171,9 +130,7 @@ function showQuestion(questionSet, index) {
 }
 
 function goToNext() {
-  if (!currentQuestions) return;
-
-  // Hide current
+  // Hide current question
   if (currentQuestions[currentQuestion]) {
     currentQuestions[currentQuestion].classList.add('hidden');
   }
@@ -193,11 +150,14 @@ function goToNext() {
   }
 
   // Optional: play next sound
+
   const nextSound = document.getElementById('next-sound');
   if (nextSound) nextSound.play();
 
   // Show next
-  currentQuestion++;
+currentQuestion++;
+
+  // Show next question if exists
   if (currentQuestion < currentQuestions.length) {
     showQuestion(currentQuestions, currentQuestion);
   } else {
@@ -207,14 +167,17 @@ function goToNext() {
   }
 }
 
+
 function checkAnswer(button, isCorrect) {
   button.classList.add(isCorrect ? 'correct' : 'incorrect');
+
   showQuestion(questionSet, currentQuestion);
 }
 
 function checkAnswer(button, isCorrect) {
   const feedback = isCorrect ? 'correct' : 'incorrect';
   button.classList.add(feedback);
+
   playSound(isCorrect);
   updateXP(isCorrect);
 
@@ -227,8 +190,8 @@ function checkFillBlank(inputId, correctAnswers) {
   const inputField = document.getElementById(inputId);
   const answer = inputField.value.trim().toLowerCase();
   if (answer === '') return;
-  if (answer === '') return;
 
+  if (answer === '') return;
   const isCorrect = correctAnswers.includes(answer);
   playSound(isCorrect);
   updateXP(isCorrect);
