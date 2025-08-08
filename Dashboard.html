@@ -1,75 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>LinguaQuest - Dashboard</title>
-  <link rel="stylesheet" href="dashboard.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lesson App</title>
+  <link rel="stylesheet" href="lesson.css" />
 </head>
 <body>
-<header class="navbar">
-  <h1 class="logo">LinguaQuest</h1>
-  <nav>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="dashboard.html" class="active">Lessons</a></li>
+  <header>
+    <h1>📚 Lesson Dashboard</h1>
+    <div id="status">
+      <span id="xp">XP: 0</span>
+      <span id="hearts">❤❤❤</span>
+    </div>
+  </header>
+
+
+
+  <main id="dashboard">
+    <ul>
+      <li onclick="showModeSelection(1)">Lesson 1: Greetings ✅</li>
+      <li onclick="showModeSelection(2)">Lesson 2: Numbers & Counting</li>
+      <li onclick="showModeSelection(3)">Lesson 3: Days, Months & Time</li>
+      <li onclick="showModeSelection(4)">Lesson 4: Colors </li>
+      <li onclick="showModeSelection(5)">Lesson 5: Introducing Yourself</li>
     </ul>
-  </nav>
-</header>
+  </main>
 
-<section class="dashboard">
-  <h2>Your Lessons</h2>
-  <div class="lessons-grid">
-    <a href="lesson.html" class="lesson-card">Lesson 1 - Greetings</a>
-    <a href="#" class="lesson-card disabled">Lesson 2 - Coming Soon</a>
-  </div>
-</section>
-
-
-
-    <div class="dashboard-container">
-      <div class="card progress-card">
-        <h2>Current Course: Japanese</h2>
-        <p>Level: Beginner</p>
-        <div class="progress-bar">
-          <div class="progress" style="width: 65%"></div>
-        </div>
-        <p>65% completed</p>
-      </div>
-
-      <div class="card goals-card">
-        <h2>Today's Goal</h2>
-        <p>Practice 15 minutes</p>
-       <p>Status: <span id="goalStatus" class="goal-status">❌ Not Done</span>
-
-        <button onclick="markGoalDone()" class="btn">Mark as Done</button>
-
-      </div>
-
-      <div class="card next-lesson-card">
-        <h2>Next Lesson</h2>
-        <p>Hiragana: Part 4</p>
-        <a href="/lesson1.html" class="btn">Continue Lesson</a>
-      </div>
-
-
-      <div class="card achievement-card">
-        <h2>Achievements</h2>
-        <ul>
-          <li>🔥 4-day streak</li>
-          <li>🏆 Completed 3 lessons</li>
-          <li>📖 50 words learned</li>
-        </ul>
-      </div>
+  <section id="mode-selection" class="hidden">
+    <h2>🎮 Choose Your Game Mode</h2>
+    <div class="mode-buttons">
+      <button onclick="startMode('mcq')">✅ Multiple Choice</button>
+      <button onclick="startMode('fill')">✏ Fill in the Blanks</button>
+      <button onclick="startMode('drag')">🛠 Drag and Drop</button>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <p>&copy; 2025 LinguaQuest. All rights reserved.</p>
-  </footer>
+  <audio id="correct-sound" src="https://www.soundjay.com/human/sounds/applause-8.mp3"></audio>
+  <audio id="incorrect-sound" preload="auto" src="YOUR_NEW_OOPS_CLIP_URL_HERE"></audio>
 
-<footer>
-  <p>© 2025 LinguaQuest. All Rights Reserved.</p>
-</footer>
-
+  <script src="lesson.js"></script>
 </body>
 </html>
+
+

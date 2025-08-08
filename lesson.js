@@ -74,29 +74,43 @@ function showModeSelection() {
   document.getElementById('mode-selection').classList.remove('hidden');
 }
 
+
+let selectedLesson = null; // store clicked lesson number
+
+function showModeSelection(lessonNumber) {
+  selectedLesson = lessonNumber; // save the lesson number
+  document.getElementById('dashboard').classList.add('hidden');
+  document.getElementById('mode-selection').classList.remove('hidden');
+}
+
 function startMode(mode) {
   currentMode = mode;
   document.getElementById('mode-selection').classList.add('hidden');
   document.getElementById('lesson').classList.remove('hidden');
-  document.getElementById('lesson-title').textContent = `🧠 Lesson Mode: ${modeDescription(mode)}`;
+  document.getElementById('lesson-title').textContent = `🧠 Lesson ${selectedLesson} - ${modeDescription(mode)}`;
 
   currentQuestion = 0;
 
-  // Only select existing HTML questions
+  // Hide all questions first
+  document.querySelectorAll('.question').forEach(q => q.classList.add('hidden'));
+
+  // Select only the questions for this lesson and mode
   if (mode === 'mcq') {
-    mcqQuestions = Array.from(document.querySelectorAll('[id^="mcq-question"]'));
+    mcqQuestions = Array.from(document.querySelectorAll(`[id^="mcq-question"][data-lesson="${selectedLesson}"]`));
     currentQuestions = mcqQuestions;
   } else if (mode === 'fill') {
-    fillQuestions = Array.from(document.querySelectorAll('[id^="fill-question"]'));
+    fillQuestions = Array.from(document.querySelectorAll(`[id^="fill-question"][data-lesson="${selectedLesson}"]`));
     currentQuestions = fillQuestions;
   } else if (mode === 'drag') {
-    dragQuestions = Array.from(document.querySelectorAll('[id^="drag-question"]'));
+    dragQuestions = Array.from(document.querySelectorAll(`[id^="drag-question"][data-lesson="${selectedLesson}"]`));
     currentQuestions = dragQuestions;
   }
 
-  // Show first question
+  // Show first question of the selected lesson
   showQuestion(currentQuestions, currentQuestion);
 }
+
+
 
 
 
