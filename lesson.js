@@ -3,7 +3,6 @@ let hearts = 3;
 
 let currentQuestion = 0;
 let currentMode = '';
-<<<<<<< HEAD
 let currentQuestions = [];
 
 let selectedLanguage = localStorage.getItem('selectedLanguage');
@@ -65,11 +64,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
-=======
+
 let fillQuestions = [];
 let dragQuestions = [];
 let mcqQuestions = [];
->>>>>>> 9398160b41b2ac1540d2c5d157dcfdc98269c7c7
+
 
 function showModeSelection() {
   document.getElementById('dashboard').classList.add('hidden');
@@ -83,7 +82,6 @@ function startMode(mode) {
   document.getElementById('lesson-title').textContent = `🧠 Lesson Mode: ${modeDescription(mode)}`;
 
   currentQuestion = 0;
-<<<<<<< HEAD
   currentQuestions = [];
 
   // Clear old questions from the lesson container
@@ -142,7 +140,7 @@ function startMode(mode) {
   }
 
   showQuestion(currentQuestions, currentQuestion);
-=======
+
 
   if (mode === 'mcq') {
     mcqQuestions = Array.from(document.querySelectorAll('[id^="mcq-question"]'));
@@ -154,7 +152,6 @@ function startMode(mode) {
     dragQuestions = Array.from(document.querySelectorAll('[id^="drag-question"]'));
     showQuestion(dragQuestions, currentQuestion);
   }
->>>>>>> 9398160b41b2ac1540d2c5d157dcfdc98269c7c7
 }
 
 function modeDescription(mode) {
@@ -174,7 +171,6 @@ function showQuestion(questionSet, index) {
 }
 
 function goToNext() {
-<<<<<<< HEAD
   if (!currentQuestions) return;
 
   // Hide current
@@ -183,7 +179,7 @@ function goToNext() {
   }
 
   // Play next sound if available
-=======
+
   let questionSet;
   if (currentMode === 'mcq') questionSet = mcqQuestions;
   else if (currentMode === 'fill') questionSet = fillQuestions;
@@ -197,13 +193,11 @@ function goToNext() {
   }
 
   // Optional: play next sound
->>>>>>> 9398160b41b2ac1540d2c5d157dcfdc98269c7c7
   const nextSound = document.getElementById('next-sound');
   if (nextSound) nextSound.play();
 
   // Show next
   currentQuestion++;
-<<<<<<< HEAD
   if (currentQuestion < currentQuestions.length) {
     showQuestion(currentQuestions, currentQuestion);
   } else {
@@ -215,14 +209,12 @@ function goToNext() {
 
 function checkAnswer(button, isCorrect) {
   button.classList.add(isCorrect ? 'correct' : 'incorrect');
-=======
   showQuestion(questionSet, currentQuestion);
 }
 
 function checkAnswer(button, isCorrect) {
   const feedback = isCorrect ? 'correct' : 'incorrect';
   button.classList.add(feedback);
->>>>>>> 9398160b41b2ac1540d2c5d157dcfdc98269c7c7
   playSound(isCorrect);
   updateXP(isCorrect);
 
@@ -234,14 +226,9 @@ function checkAnswer(button, isCorrect) {
 function checkFillBlank(inputId, correctAnswers) {
   const inputField = document.getElementById(inputId);
   const answer = inputField.value.trim().toLowerCase();
-<<<<<<< HEAD
+  if (answer === '') return;
   if (answer === '') return;
 
-=======
-
-  if (answer === '') return;
-
->>>>>>> 9398160b41b2ac1540d2c5d157dcfdc98269c7c7
   const isCorrect = correctAnswers.includes(answer);
   playSound(isCorrect);
   updateXP(isCorrect);
