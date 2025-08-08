@@ -21,9 +21,7 @@
     <ul>
       <li onclick="showModeSelection(1)">Lesson 1: Greetings ✅</li>
       <li onclick="showModeSelection(2)">Lesson 2: Numbers & Counting</li>
-      <li onclick="showModeSelection(3)">Lesson 3: Days, Months & Time</li>
-      <li onclick="showModeSelection(4)">Lesson 4: Colors </li>
-      <li onclick="showModeSelection(5)">Lesson 5: Introducing Yourself</li>
+      
     </ul>
   </main>
 
@@ -43,15 +41,14 @@
     <!-- Dynamic Question Container -->
     <div id="question-container"></div>
 
-    <!-- Next Button -->
-    <button id="next-btn" class="hidden" onclick="goToNext()">Next</button>
+
   </section>
 
   <audio id="correct-sound" src="https://www.soundjay.com/human/sounds/applause-8.mp3"></audio>
   <audio id="incorrect-sound" preload="auto" src="YOUR_NEW_OOPS_CLIP_URL_HERE"></audio>
 
     <!-- Lesson 1 questions -->
-  <div class="question hidden" data-lesson="1" id="mcq-question-1">
+  <div class="question hidden" data-lesson="1" data-lang="german" id="mcq-question-1">
     <p>What does "Hello" mean?</p>
     <button onclick="checkAnswer(this, true)">A) Hallo</button>
     <button onclick="checkAnswer(this, false)">B) Tschuss</button>
@@ -60,7 +57,7 @@
     <button class="next-btn hidden" onclick="goToNext()">Next</button>
   </div>
 
-    <div class="question hidden" data-lesson="1" id="mcq-question-2">
+    <div class="question hidden" data-lesson="1"data-lang="german" id="mcq-question-2">
       <p>What does "Hello" mean?</p>
       <button onclick="checkAnswer(this, true)">A) Hallo</button>
       <button onclick="checkAnswer(this, false)">B) Tschuss</button>
@@ -69,7 +66,7 @@
       <button class="next-btn hidden" onclick="goToNext()">Next</button>
     </div>
 
-    <div class="question hidden" data-lesson="1" id="mcq-question-3">
+    <div class="question hidden" data-lesson="1"data-lang="german" id="mcq-question-3">
       <p>What does "Guten Morgen" mean?</p>
       <button onclick="checkAnswer(this, true)">A) Good Morning</button>
       <button onclick="checkAnswer(this, false)">B) Good Evening</button><br>
@@ -78,7 +75,7 @@
       <button class="next-btn hidden" onclick="goToNext()">Next</button>
     </div>
 
-    <div class="question hidden" data-lesson="1" id="mcq-question-4">
+    <div class="question hidden" data-lesson="1" data-lang="german" id="mcq-question-4">
       <p>How do you say “How are you?"?</p>
       <button onclick="checkAnswer(this, true)">A) Wie geht’s?</button>
       <button onclick="checkAnswer(this, false)">B) Auf Wiedersehen</button>
@@ -89,21 +86,21 @@
 
 
 
-      <div class="question hidden" data-lesson="1" id="fill-question1">
+      <div class="question hidden" data-lesson="1" data-lang="german" id="fill-question1">
         <p>Guten ______!</p>
         <input type="text" id="fillBlank1" placeholder="Your answer">
         <button onclick="checkFillBlank('fillBlank1', ['morgen'])">Check answer</button>
         <button class="next-btn hidden" onclick="goToNext()">Next</button>
       </div>
 
-    <div class="question hidden" data-lesson="1" id="fill-question2">
+    <div class="question hidden" data-lesson="1"data-lang="german" id="fill-question2">
       <p> Wie ______ du?</p>
       <input type="text" id="fillBlank2" placeholder="Your answer"/>
       <button onclick="checkFillBlank('fillBlank2', ['geht'])">Check answer</button>
       <button class="next-btn hidden" onclick="goToNext()">Next</button>
     </div>
 
-    <div class="question hidden" data-lesson="1" id="fill-question3">
+    <div class="question hidden" data-lesson="1" data-lang="german" id="fill-question3">
       <p>Hallo, mein ______ ist Anna.</p>
       <input type="text" id="fillBlank3" placeholder="Your answer"/>
       <button onclick="checkFillBlank('fillBlank3', ['name'])">Check answer</button>
@@ -111,7 +108,7 @@
     </div>
 
 
-    <div class="question hidden" data-lesson="1" id="drag-question">
+    <div class="question hidden" data-lesson="1" data-lang="german" id="drag-question">
       <div class="drag-container">
         <p class="sentence">Ich <span id="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)">Drag here</span> Anna.</p>
         <div class="options">
@@ -125,7 +122,7 @@
       <button onclick="goToNext()">Next</button>
     </div>
 
-    <div class="question hidden"  data-lesson="1" id="drag-question2">
+    <div class="question hidden"  data-lesson="1" data-lang="german"id="drag-question2">
       <div class="drag-container"></div>
         <p class="sentence">Du <span class="dropzone" ondrop="drop(event, 'bist', this)" ondragover="allowDrop(event)">Drag here</span> nett.</p>
         <div class="options">
@@ -137,8 +134,10 @@
       <button onclick="goToNext()">Next</button>
     </div>
 
+
+
     <!-- Lesson 2 questions -->
-    <div class="question hidden" data-lesson="2" id="mcq-question-1">
+    <div class="question hidden" data-lesson="2"data-lang="german" id="mcq-question-1">
       <p>one = ?</p>
       <button onclick="checkAnswer(this, true)">A) eins</button>
       <button onclick="checkAnswer(this, false)">B) zwanzig</button>
@@ -147,7 +146,7 @@
       <button class="next-btn hidden" onclick="goToNext()">Next</button>
     </div>
 
-      <div class="question hidden" data-lesson="2" id="mcq-question-2">
+      <div class="question hidden" data-lesson="2" data-lang="german" id="mcq-question-2">
         <p>tweleve = ?</p>
         <button onclick="checkAnswer(this, false)">A) eins</button>
         <button onclick="checkAnswer(this, false)">B) zwanzig</button>
@@ -156,7 +155,7 @@
         <button class="next-btn hidden" onclick="goToNext()">Next</button>
       </div>
 
-    <div class="question hidden" data-lesson="2" id="mcq-question-3">
+    <div class="question hidden" data-lesson="2" data-lang="german" id="mcq-question-3">
         <p>nine = ?</p>
         <button onclick="checkAnswer(this, false)">A) funf </button>
         <button onclick="checkAnswer(this, false)">B) zwanzig</button>
@@ -166,21 +165,93 @@
     </div>
 
     
-      <div class="question hidden" data-lesson="2" id="fill-question1">
+      <div class="question hidden" data-lesson="2" data-lang="german" id="fill-question1">
         <p>There are ______ (four)pens on table.!</p>
         <input type="text" id="fillBlank2" placeholder="Your answer">
         <button onclick="checkFillBlank('fillBlank2', ['vier'])">Check answer</button>
         <button class="next-btn hidden" onclick="goToNext()">Next</button>
       </div>
+      <!-- MCQ Questions -->
+    <div class="question hidden" data-lesson="1" data-lang="japanese" id="mcq-question-1">
+      <p>What does "Konnichiwa" mean?</p>
+      <button onclick="checkAnswer(this, true)">A) Hello</button>
+      <button onclick="checkAnswer(this, false)">B) Goodbye</button>
+  <button onclick="checkAnswer(this, false)">C) Thank you</button>
+  <button onclick="checkAnswer(this, false)">D) Please</button><br>
+  <button class="next-btn hidden" onclick="goToNext()">Next</button>
+</div>
 
-    
-      
+<div class="question hidden" data-lesson="1" data-lang="japanese" id="mcq-question-2">
+  <p>What does "Ohayou" mean?</p>
+  <button onclick="checkAnswer(this, true)">A) Good Morning</button>
+  <button onclick="checkAnswer(this, false)">B) Good Evening</button>
+  <button onclick="checkAnswer(this, false)">C) Goodbye</button>
+  <button onclick="checkAnswer(this, false)">D) Thank You</button>
+  <button class="next-btn hidden" onclick="goToNext()">Next</button>
+</div>
 
+<div class="question hidden" data-lesson="1" data-lang="japanese" id="mcq-question-3">
+  <p>How do you say “How are you?” in Japanese?</p>
+  <button onclick="checkAnswer(this, true)">A) Ogenki desu ka?</button>
+  <button onclick="checkAnswer(this, false)">B) Sayounara</button>
+  <button onclick="checkAnswer(this, false)">C) Konbanwa</button>
+  <button onclick="checkAnswer(this, false)">D) Konnichiwa</button>
+  <button class="next-btn hidden" onclick="goToNext()">Next</button>
+</div>
 
-  
+<div class="question hidden" data-lesson="1" data-lang="japanese" id="mcq-question-4">
+  <p>What does "Arigatou" mean?</p>
+  <button onclick="checkAnswer(this, true)">A) Thank you</button>
+  <button onclick="checkAnswer(this, false)">B) Please</button>
+  <button onclick="checkAnswer(this, false)">C) Good Morning</button>
+  <button onclick="checkAnswer(this, false)">D) Hello</button>
+  <button class="next-btn hidden" onclick="goToNext()">Next</button>
+</div>
 
+<!-- Fill in the blanks -->
+<div class="question hidden" data-lesson="1" data-lang="japanese" id="fill-question1">
+  <p>Ohayou ______</p>
+  <input type="text" id="fillBlank1-jp" placeholder="Your answer">
+  <button onclick="checkFillBlank('fillBlank1-jp', ['gozaimasu'])">Check answer</button>
+  <button class="next-btn hidden" onclick="goToNext()">Next</button>
+</div>
 
+<div class="question hidden" data-lesson="1" data-lang="japanese" id="fill-question2">
+  <p>______ hajimemashite</p>
+  <input type="text" id="fillBlank2-jp" placeholder="Your answer"/>
+  <button onclick="checkFillBlank('fillBlank2-jp', ['konnichiwa'])">Check answer</button>
+  <button class="next-btn hidden" onclick="goToNext()">Next</button>
+</div>
 
+<div class="question hidden" data-lesson="1" data-lang="japanese" id="fill-question3">
+  <p>Watashi no namae wa ______ desu</p>
+  <input type="text" id="fillBlank3-jp" placeholder="Your answer"/>
+  <button onclick="checkFillBlank('fillBlank3-jp', ['Niku'])">Check answer</button>
+  <button class="next-btn hidden" onclick="goToNext()">Next</button>
+</div>
+
+<!-- Drag and drop -->
+<div class="question hidden" data-lesson="1" data-lang="japanese" id="drag-question">
+  <div class="drag-container">
+    <p class="sentence">Watashi wa <span id="dropzone-jp1" ondrop="drop(event)" ondragover="allowDrop(event)">Drag here</span> gakusei desu.</p>
+    <div class="options">
+        <div class="word" draggable="true" ondragstart="drag(event)" id="desu-jp">desu</div>
+        <div class="word" draggable="true" ondragstart="drag(event)" id="sensei-jp">sensei</div>
+        <div class="word" draggable="true" ondragstart="drag(event)" id="gakusei-jp">gakusei</div>
+    </div>
+  </div>
+  <button onclick="goToNext()">Next</button>
+</div>
+
+<div class="question hidden" data-lesson="1" data-lang="japanese" id="drag-question2">
+  <p class="sentence">Kore wa <span class="dropzone" ondrop="drop(event, 'neko', this)" ondragover="allowDrop(event)">Drag here</span> desu.</p>
+  <div class="options">
+      <div class="word" draggable="true" ondragstart="drag(event)" id="neko-jp">neko</div>
+      <div class="word" draggable="true" ondragstart="drag(event)" id="inu-jp">inu</div>
+      <div class="word" draggable="true" ondragstart="drag(event)" id="tori-jp">tori</div>
+  </div>
+  <button onclick="goToNext()">Next</button>
+</div>
 
   </section>
 
