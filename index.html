@@ -10,14 +10,14 @@
   <nav>
     <ul class="nav-links">
       <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="dashboard.html">Lessons</a></li>
+      <!-- <li><a href="dashboard.html">Lessons</a></li> -->
       <li><a href="about.html">About</a></li>
     </ul>
   </nav>
 </header>
 
 <section class="hero">
-  <h2>Learn Languages the Fun Way! 🌍</h2>
+  <h2>Learn Languages the Fun Way! </h2>
   <p>Interactive lessons, instant feedback, XP rewards & fun challenges.</p>
 
   <!-- Language Selector -->
@@ -31,7 +31,15 @@
       <option value="Japanese">Japanese</option>
       <option value="French">French</option>
     </select>
+    
   </div>
+
+  <script>
+    document.getElementById('language').addEventListener('change', function() {
+        localStorage.setItem('selectedLanguage', this.value);
+        console.log("Language saved:", this.value); // For testing
+    });
+</script>
 
   <a href="#" class="btn" onclick="startLearning()">Get Started</a>
 </section>

@@ -6,10 +6,11 @@
   font-family: 'Segoe UI', sans-serif;
 }
 
-body {
+/* body {
   background-color: #f4f6fa;
   color: #222;
-}
+  
+} */
 
 /* Navbar */
 .navbar {
@@ -84,16 +85,9 @@ body {
   font-size: 1.1rem;
 }
 
-#next-btn {
-  margin-top: 1.5rem;
-  padding: 0.6rem 1.2rem;
-  font-size: 1rem;
-  background-color: #4a90e2;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
+
+
+
 
 footer {
   text-align: center;
@@ -108,9 +102,11 @@ body {
   color: #333;
   margin: 0;
   padding: 0;
+  
 }
 
 header {
+  /* background: linear-gradient(90deg, #6a11cb, #2575fc); */
   background: linear-gradient(90deg, #6a11cb, #2575fc);
   color: white;
   padding: 15px;
@@ -127,6 +123,7 @@ main, section {
   padding: 20px;
 }
 
+
 #dashboard ul {
   list-style: none;
   padding: 0;
@@ -134,10 +131,11 @@ main, section {
 
 #dashboard li {
   background: white;
-  margin: 10px 0;
-  padding: 15px;
+  margin: 50px 0;
+  padding: 35px;
   border-radius: 8px;
   cursor: pointer;
+  font-size: 25px;
   transition: transform 0.2s, background 0.3s;
 }
 
@@ -150,14 +148,25 @@ main, section {
   display: none;
 }
 
+#mode-selection{
+  height: 800px;
+  background-image: url("https://static.vecteezy.com/system/resources/previews/007/045/965/non_2x/abstract-white-and-grey-pattern-background-design-abstract-graphic-design-white-and-grey-banner-pattern-background-web-template-abstract-white-wallpaper-abstract-white-background-free-vector.jpg ");
+  background-size: cover ;
+}
+#mode-selection h2{
+  margin-top: 80px;
+  text-align: center;
+  font-size: 70px;
+  height: 100px;
+}
 .mode-buttons button {
-  margin: 10px;
-  padding: 15px 25px;
+  margin:  150px 0 0 150px;
+  padding: 55px 25px;
   border: none;
   border-radius: 10px;
   background: #e84393;
   color: white;
-  font-size: 16px;
+  font-size: 30px;
   cursor: pointer;
   transition: background 0.3s;
 }
@@ -166,21 +175,46 @@ main, section {
   background: #fd79a8;
 }
 
+
+#fillBlank1,#fillBlank2,#fillBlank3{
+  font-size: 35px;
+  margin-left: 50px;
+}
 .question {
+  width: 900px;
+  height: 600px;
   background: white;
-  padding: 20px;
-  margin: 20px 0;
+  padding: 20px 0 0 100px;
+  margin: 40px 0 0 300px;
   border-radius: 10px;
   animation: pop 0.5s;
+  background-color: #b6f3f7;
 }
+.question p{
+  font-size: 50px;
+  text-align: center;
+  margin: 50px 0 0 0 ;
+}
+#mcq-question1{
+    margin-left: 700px;
+    margin-right: auto;
 
+}
+#mcq-question2{
+  margin-left: 200px;
+}
+#mcq-question3{
+  margin-left: 500px;
+}
 button {
-  margin: 8px;
+  text-align: center; 
+  font-size: 30px;  
+  margin: 90px 0 0 130px;
   padding: 10px 20px;
   border: none;
   border-radius: 8px;
-  background: #22a6b3;
-  color: white;
+  background: #f8fdfd;
+  color: rgb(8, 5, 5);
   cursor: pointer;
 }
 
@@ -193,7 +227,19 @@ button:hover {
   align-items: center;
   gap: 15px;
 }
-
+.next-btn {
+  margin:70px 1.2rem 0 2000px;
+  padding: 0.6rem 1.2rem;
+  font-size: 1.5rem;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-left: 3.5rem;
+  text-align: center;
+  /* display: inline-block; */
+}
 .drag-item {
   background: #f0932b;
   padding: 10px;
@@ -224,4 +270,4 @@ button:hover {
   0% { transform: scale(0.9); opacity: 0; }
   100% { transform: scale(1); opacity: 1; }
 >>>>>>> 023f4cd8c7c09320de5090289d820a5c34f4763a
-} */
+} */

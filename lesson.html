@@ -15,10 +15,15 @@
     </div>
   </header>
 
+
+
   <main id="dashboard">
-    <h2>Lessons</h2>
     <ul>
-      <li onclick="showModeSelection()">Lesson 1: Greetings ✅</li>
+      <li onclick="showModeSelection(1)">Lesson 1: Greetings ✅</li>
+      <li onclick="showModeSelection(2)">Lesson 2: Numbers & Counting</li>
+      <li onclick="showModeSelection(3)">Lesson 3: Days, Months & Time</li>
+      <li onclick="showModeSelection(4)">Lesson 4: Colors </li>
+      <li onclick="showModeSelection(5)">Lesson 5: Introducing Yourself</li>
     </ul>
   </main>
 
@@ -34,29 +39,27 @@
   <section id="lesson" class="hidden">
     <h2 id="lesson-title"></h2>
 
-    <div class="question hidden" id="mcq-question">
-      <p>What does "Hello" mean?</p>
-      <button onclick="checkAnswer(this, true)">A) Greeting</button>
-      <button onclick="checkAnswer(this, false)">B) Number</button>
-    </div>
+    <!-- Dynamic Question Container -->
+    <div id="question-container"></div>
 
-    <div class="question hidden" id="fill-question">
-      <p>Fill in the blank: 1, 2, ___, 4</p>
-      <input type="text" id="fillBlank"/>
-      <button onclick="checkFillBlank()">Submit</button>
-    </div>
-
-    <div class="question hidden" id="drag-question">
-      <p>Drag the word "Three" to the box:</p>
-      <div class="drag-container">
-        <div draggable="true" class="drag-item" id="dragThree">Three</div>
-        <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)">Drop Here</div>
-      </div>
-    </div>
+    <!-- Next Button -->
+    <button id="next-btn" class="hidden" onclick="goToNext()">Next</button>
   </section>
 
-  <audio id="correct-sound" src="https://www.soundjay.com/buttons/sounds/button-4.mp3"></audio>
-  <audio id="incorrect-sound" src="https://www.soundjay.com/buttons/sounds/button-10.mp3"></audio>
+  <audio id="correct-sound" src="https://www.soundjay.com/human/sounds/applause-8.mp3"></audio>
+  <audio id="incorrect-sound" preload="auto" src="YOUR_NEW_OOPS_CLIP_URL_HERE"></audio>
+
+  <script src="lesson.js"></script>
+</body>
+</html>
+
+
+  <audio id="correct-sound" src="https://www.soundjay.com/human/sounds/applause-8.mp3"></audio>
+  <!-- <audio id="incorrect-sound" src="https://cdn.pixabay.com/download/audio/2021/11/25/audio_9c6748f4e4.mp3?filename=oops-45698.mp3"></audio> -->
+  <!-- <audio id="next-sound" src="https://www.soundjay.com/button/beep-07.wav"></audio> -->
+
+  <!-- <audio id="incorrect-sound" preload="auto" src="https://cdn.pixabay.com/download/audio/2021/11/25/audio_9c6748f4e4.mp3?filename=oops-45698.mp3"></audio> -->
+<audio id="incorrect-sound" preload="auto" src="YOUR_NEW_OOPS_CLIP_URL_HERE"></audio>
 
   <script src="lesson.js"></script>
 </body>
