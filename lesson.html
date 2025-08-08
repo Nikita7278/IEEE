@@ -11,19 +11,19 @@
     <h1>📚 Lesson Dashboard</h1>
     <div id="status">
       <span id="xp">XP: 0</span>
-      <span id="hearts">❤️❤️❤️</span>
+      <span id="hearts">❤❤❤</span>
     </div>
   </header>
 
+
+
   <main id="dashboard">
-    
     <ul>
-      <li onclick="showModeSelection()">Lesson 1: Greetings ✅</li>
-      <li onclick="showModeSelection()">Lesson 2: Numbers & Counting</li>
-      <li onclick="showModeSelection()">Lesson 3: Days, Months & Time</li>
-      <li onclick="showModeSelection()">Lesson 4: Colors </li>
-      <li onclick="showModeSelection()">Lesson 5: Introducing Yourself</li>
-      
+      <li onclick="showModeSelection(1)">Lesson 1: Greetings ✅</li>
+      <li onclick="showModeSelection(2)">Lesson 2: Numbers & Counting</li>
+      <li onclick="showModeSelection(3)">Lesson 3: Days, Months & Time</li>
+      <li onclick="showModeSelection(4)">Lesson 4: Colors </li>
+      <li onclick="showModeSelection(5)">Lesson 5: Introducing Yourself</li>
     </ul>
   </main>
 
@@ -31,55 +31,124 @@
     <h2>🎮 Choose Your Game Mode</h2>
     <div class="mode-buttons">
       <button onclick="startMode('mcq')">✅ Multiple Choice</button>
-      <button onclick="startMode('fill')">✏️ Fill in the Blanks</button>
-      <button onclick="startMode('drag')">🛠️ Drag and Drop</button>
+      <button onclick="startMode('fill')">✏ Fill in the Blanks</button>
+      <button onclick="startMode('drag')">🛠 Drag and Drop</button>
     </div>
   </section>
 
   <section id="lesson" class="hidden">
     <h2 id="lesson-title"></h2>
 
-    <div class="question hidden" id="mcq-question">
+<<<<<<< HEAD
+    <!-- Dynamic Question Container -->
+    <div id="question-container"></div>
+
+    <!-- Next Button -->
+    <button id="next-btn" class="hidden" onclick="goToNext()">Next</button>
+  </section>
+
+  <audio id="correct-sound" src="https://www.soundjay.com/human/sounds/applause-8.mp3"></audio>
+  <audio id="incorrect-sound" preload="auto" src="YOUR_NEW_OOPS_CLIP_URL_HERE"></audio>
+=======
+    <div class="question hidden" id="mcq-question-1">
       <p>What does "Hello" mean?</p>
       <button onclick="checkAnswer(this, true)">A) Hallo</button>
+<<<<<<< HEAD
       <button onclick="checkAnswer(this, false)">B) Tschuss</button><br>
+=======
+      <button onclick="checkAnswer(this, false)">B) Tschuss</button>
+      <br>
+>>>>>>> edb6c2cecb6ce399b05726e1bc7c88fffcc07ff6
       <button onclick="checkAnswer(this, false)">C) Danke</button>
-      <button onclick="checkAnswer(this, false)">D) Bitte</button>
+      <button onclick="checkAnswer(this, false)">D) Bitte</button><br>
+      <button class="next-btn hidden" onclick="goToNext()">Next</button>
     </div>
-
+      
     <div class="question hidden" id="mcq-question-2">
       <p>What does "Guten Morgen" mean?</p>
       <button onclick="checkAnswer(this, true)">A) Good Morning</button>
-      <button onclick="checkAnswer(this, false)">B) Good Evening</button>
+      <button onclick="checkAnswer(this, false)">B) Good Evening</button><br>
       <button onclick="checkAnswer(this, false)">C) Goodbye</button>
       <button onclick="checkAnswer(this, false)">D) Thank You</button>
+      <button class="next-btn hidden" onclick="goToNext()">Next</button>
     </div>
+   
 
     <div class="question hidden" id="mcq-question-3">
       <p>How do you say “How are you?"?</p>
-      <button onclick="checkAnswer(this, false)">A) Wie geht’s?</button>
-      <button onclick="checkAnswer(this, true)">B)  Auf Wiedersehen</button>
+      <button onclick="checkAnswer(this, true)">A) Wie geht’s?</button>
+      <button onclick="checkAnswer(this, false)">B) Auf Wiedersehen</button>
       <button onclick="checkAnswer(this, false)">C) Guten Abend</button>
       <button onclick="checkAnswer(this, false)">D) Hallo</button>
+      <button class="next-btn hidden" onclick="goToNext()">Next</button>
+    </div>
+      
+    <div class="question hidden" id="fill-question1">
+      <p>Guten ______!</p>
+      <input type="text" id="fillBlank1" placeholder="Your answer">
+      <button onclick="checkFillBlank('fillBlank1', ['morgen'])">Check answer</button>
+      <button class="next-btn hidden" onclick="goToNext()">Next</button>
     </div>
 
-    <div class="question hidden" id="fill-question">
-      <p>Fill in the blank: 1, 2, ___, 4</p>
-      <input type="text" id="fillBlank"/>
-      <button onclick="checkFillBlank()">Submit</button>
+    <div class="question hidden" id="fill-question2">
+      <p> Wie ______ du?</p>
+      <input type="text" id="fillBlank2" placeholder="Your answer"/>
+      <button onclick="checkFillBlank('fillBlank2', ['geht'])">Check answer</button>
+      <button class="next-btn hidden" onclick="goToNext()">Next</button>
+    </div>
+
+    <div class="question hidden" id="fill-question3">
+      <p>Hallo, mein ______ ist Anna.</p>
+      <input type="text" id="fillBlank3" placeholder="Your answer"/>
+      <button onclick="checkFillBlank('fillBlank3', ['name'])">Check answer</button>
+      <button class="next-btn hidden" onclick="goToNext()">Next</button>
     </div>
 
     <div class="question hidden" id="drag-question">
-      <p>Drag the word "Three" to the box:</p>
       <div class="drag-container">
-        <div draggable="true" class="drag-item" id="dragThree">Three</div>
-        <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)">Drop Here</div>
+        <p class="sentence">Ich <span id="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)">Drag here</span> Anna.</p>
+        <div class="options">
+            <div class="word" draggable="true" ondragstart="drag(event)" id="bin">bin</div>
+            <div class="word" draggable="true" ondragstart="drag(event)" id="heisst">heißt</div>
+            <div class="word" draggable="true" ondragstart="drag(event)" id="du">du</div>
+            <!-- <button onclick="checkFillBlank('word', ['bin'])">Check answer</button> -->
+
+        </div>
+      </div>
+      <button onclick="goToNext()">Next</button>
+    </div>
+
+    <div class="question hidden" id="drag-question2">
+      <div class="drag-container"></div>
+        <p class="sentence">Du <span class="dropzone" ondrop="drop(event, 'bist', this)" ondragover="allowDrop(event)">Drag here</span> nett.</p>
+        <div class="options">
+            <div class="word" draggable="true" ondragstart="drag(event)" id="bin2">bin</div>
+            <div class="word" draggable="true" ondragstart="drag(event)" id="bist2">bist</div>
+            <div class="word" draggable="true" ondragstart="drag(event)" id="ist">ist</div>
+        </div>
       </div>
     </div>
   </section>
 
-  <audio id="correct-sound" src="https://www.soundjay.com/buttons/sounds/button-4.mp3"></audio>
-  <audio id="incorrect-sound" src="https://www.soundjay.com/buttons/sounds/button-10.mp3"></audio>
+  <audio id="correct-sound" src="https://www.soundjay.com/human/sounds/applause-8.mp3"></audio>
+  <!-- <audio id="incorrect-sound" src="https://cdn.pixabay.com/download/audio/2021/11/25/audio_9c6748f4e4.mp3?filename=oops-45698.mp3"></audio> -->
+  <!-- <audio id="next-sound" src="https://www.soundjay.com/button/beep-07.wav"></audio> -->
+
+  <!-- <audio id="incorrect-sound" preload="auto" src="https://cdn.pixabay.com/download/audio/2021/11/25/audio_9c6748f4e4.mp3?filename=oops-45698.mp3"></audio> -->
+<audio id="incorrect-sound" preload="auto" src="YOUR_NEW_OOPS_CLIP_URL_HERE"></audio>
+>>>>>>> 9398160b41b2ac1540d2c5d157dcfdc98269c7c7
+
+  <script src="lesson.js"></script>
+</body>
+</html>
+
+
+  <audio id="correct-sound" src="https://www.soundjay.com/human/sounds/applause-8.mp3"></audio>
+  <!-- <audio id="incorrect-sound" src="https://cdn.pixabay.com/download/audio/2021/11/25/audio_9c6748f4e4.mp3?filename=oops-45698.mp3"></audio> -->
+  <!-- <audio id="next-sound" src="https://www.soundjay.com/button/beep-07.wav"></audio> -->
+
+  <!-- <audio id="incorrect-sound" preload="auto" src="https://cdn.pixabay.com/download/audio/2021/11/25/audio_9c6748f4e4.mp3?filename=oops-45698.mp3"></audio> -->
+<audio id="incorrect-sound" preload="auto" src="YOUR_NEW_OOPS_CLIP_URL_HERE"></audio>
 
   <script src="lesson.js"></script>
 </body>
