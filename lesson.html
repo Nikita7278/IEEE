@@ -39,7 +39,7 @@
   <section id="lesson" class="hidden">
     <h2 id="lesson-title"></h2>
 
-    <div class="question hidden" id="mcq-question">
+    <div class="question hidden" id="mcq-question-1">
       <p>What does "Hello" mean?</p>
       <button onclick="checkAnswer(this, true)">A) Hallo</button>
       <button onclick="checkAnswer(this, false)">B) Tschuss</button>
@@ -69,7 +69,6 @@
     </div>
       
     <div class="question hidden" id="fill-question1">
-      <h3>Fill in the blanks</h3>
       <p>Guten ______!</p>
       <input type="text" id="fillBlank1" placeholder="Your answer">
       <button onclick="checkFillBlank('fillBlank1', ['morgen'])">Check answer</button>
@@ -77,7 +76,6 @@
     </div>
 
     <div class="question hidden" id="fill-question2">
-      <h3>Fill in the blanks</h3>
       <p> Wie ______ du?</p>
       <input type="text" id="fillBlank2" placeholder="Your answer"/>
       <button onclick="checkFillBlank('fillBlank2', ['geht'])">Check answer</button>
@@ -85,7 +83,6 @@
     </div>
 
     <div class="question hidden" id="fill-question3">
-      <h3>Fill in the blanks</h3>
       <p>Hallo, mein ______ ist Anna.</p>
       <input type="text" id="fillBlank3" placeholder="Your answer"/>
       <button onclick="checkFillBlank('fillBlank3', ['name'])">Check answer</button>
@@ -93,10 +90,27 @@
     </div>
 
     <div class="question hidden" id="drag-question">
-      <p>Drag the word "Three" to the box:</p>
       <div class="drag-container">
-        <div draggable="true" class="drag-item" id="dragThree">Three</div>
-        <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)">Drop Here</div>
+        <p class="sentence">Ich <span id="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)">Drag here</span> Anna.</p>
+        <div class="options">
+            <div class="word" draggable="true" ondragstart="drag(event)" id="bin">bin</div>
+            <div class="word" draggable="true" ondragstart="drag(event)" id="heisst">heißt</div>
+            <div class="word" draggable="true" ondragstart="drag(event)" id="du">du</div>
+            <!-- <button onclick="checkFillBlank('word', ['bin'])">Check answer</button> -->
+
+        </div>
+      </div>
+      <button onclick="goToNext()">Next</button>
+    </div>
+
+    <div class="question hidden" id="drag-question2">
+      <div class="drag-container"></div>
+        <p class="sentence">Du <span class="dropzone" ondrop="drop(event, 'bist', this)" ondragover="allowDrop(event)">Drag here</span> nett.</p>
+        <div class="options">
+            <div class="word" draggable="true" ondragstart="drag(event)" id="bin2">bin</div>
+            <div class="word" draggable="true" ondragstart="drag(event)" id="bist2">bist</div>
+            <div class="word" draggable="true" ondragstart="drag(event)" id="ist">ist</div>
+        </div>
       </div>
     </div>
   </section>
